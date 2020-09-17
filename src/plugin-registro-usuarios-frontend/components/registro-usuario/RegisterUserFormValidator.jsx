@@ -18,8 +18,12 @@ export const validate = values => {
 const validateFields = values => {
     const { maxL, minL, key } = values;
     const errors = {};
-    if(!values[key]) {
+    const field = values[key];
+    if(!field) {
         errors.key = 'Este campo es obligatorio'
+        if(field.length <= maxL) {
+            
+        }
     }
     return errors;
 }

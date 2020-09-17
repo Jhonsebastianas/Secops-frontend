@@ -4,6 +4,8 @@ import Div from '../../../components/Div';
 import Label from '../../../components/Label';
 import Span from '../../../components/Span';
 
+import { Button, TextInput } from 'react-materialize';
+
 import { validate } from './RegisterUserFormValidator';
 
 export default class RegisterUserForm extends Component {
@@ -16,28 +18,26 @@ export default class RegisterUserForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <Div className='input-field col s12 m6 l6'>
-                    <Input type='text' placeholder='Nombres' name="nombres" id='nombres' onChange={this.handleChange} />
-                    <Label htmlFor="nombres">Nombres:</Label>
+                    <TextInput label='Nombres:' type='text' name="nombres" id='nombres' 
+                        onChange={this.handleChange} />
                     {errors.nombres && <Span className="helper-text">{errors.nombres}</Span>}
                 </Div>
                 <Div className='input-field col s12 m6 l6'>
-                    <Input type='text' placeholder='Apellidos' name="apellidos" id='apellidos' onChange={this.handleChange} />
-                    <Label htmlFor="apellidos">Apellidos:</Label>
+                    <TextInput label='Apellidos:' type='text' name="apellidos" id='apellidos' 
+                        onChange={this.handleChange} validate='true' />
                     {errors.apellidos && <Span className="helper-text">{errors.apellidos}</Span>}
                 </Div>
                 <Div className='input-field col s12 m7 l7'>
-                    <Input type='email' placeholder='Correo' datalength='50' name="correo" id='correo'
+                    <TextInput label='Correo:' type='email' datalength='50' name="correo" id='correo'
                         onChange={this.handleChange} />
-                        <Label htmlFor="correo">Correo:</Label>
                         {errors.correo && <Span className="helper-text">{errors.correo}</Span>}
                 </Div>
                 <Div className='input-field col s12 m5 l5'>
-                    <Input type='password' placeholder='Clave' name='clave' id='clave'
+                    <TextInput label='Clave:' type='password' name='clave' id='clave'
                         onChange={this.handleChange} />
-                        <Label htmlFor="clave">clave:</Label>
                         {errors.clave && <Span className="helper-text">{errors.clave}</Span>}
                 </Div>
-                <Input type="submit" value="Enviar" />
+                <Button>Enviar</Button>
             </form>
         );
     }
