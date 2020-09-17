@@ -1,0 +1,25 @@
+div.card-registro {
+    margin-top: 17%;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+    margin: 0px;
+}
+
+.parallax img {
+    opacity: 0.6;
+}
+
+
+.parallax-container {
+    height: 100%;
+    width: 100% ;
+    background: no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}

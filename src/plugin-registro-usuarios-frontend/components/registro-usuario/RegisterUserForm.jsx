@@ -17,26 +17,26 @@ export default class RegisterUserForm extends Component {
         const { errors } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
-                <Div className='input-field col s12 m6 l6'>
-                    <TextInput label='Nombres:' type='text' name="nombres" id='nombres' 
-                        onChange={this.handleChange} />
-                    {errors.nombres && <Span className="helper-text">{errors.nombres}</Span>}
-                </Div>
-                <Div className='input-field col s12 m6 l6'>
-                    <TextInput label='Apellidos:' type='text' name="apellidos" id='apellidos' 
-                        onChange={this.handleChange} validate='true' />
-                    {errors.apellidos && <Span className="helper-text">{errors.apellidos}</Span>}
-                </Div>
-                <Div className='input-field col s12 m7 l7'>
-                    <TextInput label='Correo:' type='email' datalength='50' name="correo" id='correo'
-                        onChange={this.handleChange} />
-                        {errors.correo && <Span className="helper-text">{errors.correo}</Span>}
-                </Div>
-                <Div className='input-field col s12 m5 l5'>
-                    <TextInput label='Clave:' type='password' name='clave' id='clave'
-                        onChange={this.handleChange} />
-                        {errors.clave && <Span className="helper-text">{errors.clave}</Span>}
-                </Div>
+                <TextInput label='Nombres:' name="nombres" id='nombres'
+                    onChange={this.handleChange} validate
+                    s='12' m='6' l='6'
+                    children={errors.nombres && <Span className="helper-text">{errors.nombres}</Span>} />
+                
+                <TextInput label='Apellidos:' name="apellidos" id='apellidos'
+                    onChange={this.handleChange} 
+                    s='12' m='6' l='6'
+                    children={errors.apellidos && <Span className="helper-text">{errors.apellidos}</Span>} />
+                
+                <TextInput label='Correo:' email='true' name="correo" id='correo'
+                    onChange={this.handleChange} 
+                    s='12' m='7' l='7'
+                    children={errors.correo && <Span className="helper-text">{errors.correo}</Span>} />
+                
+                <TextInput label='Clave:' password='true' name='clave' id='clave'
+                    onChange={this.handleChange} 
+                    s='12' m='5' l='5'
+                    children={errors.clave && <Span className="helper-text">{errors.clave}</Span>}/>
+                
                 <Button>Enviar</Button>
             </form>
         );
