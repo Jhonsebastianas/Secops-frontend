@@ -4,7 +4,7 @@ import './RegisterUser.css';
 // Images
 import backgroundImage from '../../../assets/images/money-bg.jpg';
 // Others
-import { Row } from 'react-materialize';
+import { Row, Col, Card, Parallax } from 'react-materialize';
 import { RegisterUserForm } from './RegisterUserForm'
 
 export default class RegisterUser extends Component {
@@ -12,9 +12,9 @@ export default class RegisterUser extends Component {
         return (
             <div className="parallax-container">
                 <Row>
-                    <div className="col s2"></div>
-                    <div className="col s12 m8 l8">
-                        <div className="card card-registro">
+                    <Col s='2'></Col>
+                    <Col s='12' m='8' l='8'>
+                        <Card className="card-registro">
                             <div className="card-content">
                                 <h6>INFORMACIÓN REGISTRO:</h6>
                                 <RegisterUserForm />
@@ -23,12 +23,12 @@ export default class RegisterUser extends Component {
                                 </div>
                                 <a href="/" className="">VOLVER</a>
                             </div>
-                        </div>
+                        </Card>
                         <div className="parallax">
                             <img height="100dv" src={backgroundImage} alt="Unsplashed background img 1" />
                         </div>
-                    </div>
-                    <div className="col s2"></div>
+                    </Col>
+                    <Col s='2'></Col>
                 </Row>
             </div>
         );
