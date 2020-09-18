@@ -5,7 +5,8 @@ import './RegisterUser.css';
 import backgroundImage from '../../../assets/images/money-bg.jpg';
 // Others
 import { Row, Col, Card, Parallax } from 'react-materialize';
-import { RegisterUserForm } from './RegisterUserForm'
+import { RegisterUserForm } from './RegisterUserForm';
+import { Link } from "react-router-dom";
 
 export default class RegisterUser extends Component {
     render() {
@@ -21,7 +22,7 @@ export default class RegisterUser extends Component {
                                 <div className="center-align">
                                     <a className="">¿Olvidaste tu contraseña?</a>
                                 </div>
-                                <a href="/" className="">VOLVER</a>
+                                <Link to="/">VOLVER</Link>
                             </div>
                         </Card>
                         <div className="parallax">
