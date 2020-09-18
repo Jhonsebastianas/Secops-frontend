@@ -1,65 +1,61 @@
-import React, { Component } from 'react';
-import Input from '../../../components/Input';
-import Div from '../../../components/Div';
-import Label from '../../../components/Label';
-import Span from '../../../components/Span';
+import React from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
-import { Button, TextInput } from 'react-materialize';
+import { Button, TextInput, Row } from 'react-materialize';
 
-import { validate } from './RegisterUserFormValidator';
+export const RegisterUserForm = () => {
 
-export default class RegisterUserForm extends Component {
-    state = {
-        errors: {}
-    }
+    const registerSchema = Yup.object().shape({
+        nombres: Yup.string()
+            .required('Este campo es obligatorio'),
+        apellidos: Yup.string()
+            .required('Este campo es obligatorio'),
+        correo: Yup.string()
+            .required('Este campo es obligatorio')
+            .email('Correo electronico invalido')
+            .min(3, 'Mínimo 5 caracteres'),
+        clave: Yup.string()
+            .required('Este campo es obligatorio')
+            .min(8, 'Minimo 8 caracteres')
+    });
 
-    render() {
-        const { errors } = this.state;
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <TextInput label='Nombres:' name="nombres" id='nombres'
-                    onChange={this.handleChange} validate
-                    s='12' m='6' l='6'
-                    children={errors.nombres && <Span className="helper-text">{errors.nombres}</Span>} />
-                
-                <TextInput label='Apellidos:' name="apellidos" id='apellidos'
-                    onChange={this.handleChange} 
-                    s='12' m='6' l='6'
-                    children={errors.apellidos && <Span className="helper-text">{errors.apellidos}</Span>} />
-                
-                <TextInput label='Correo:' email='true' name="correo" id='correo'
-                    onChange={this.handleChange} 
-                    s='12' m='7' l='7'
-                    children={errors.correo && <Span className="helper-text">{errors.correo}</Span>} />
-                
-                <TextInput label='Clave:' password='true' name='clave' id='clave'
-                    onChange={this.handleChange} 
-                    s='12' m='5' l='5'
-                    children={errors.clave && <Span className="helper-text">{errors.clave}</Span>}/>
-                
-                <Button>Enviar</Button>
-            </form>
-        );
-    }
+    const formik = useFormik({
+        initialValues: {
+            nombres: '',
+            apellidos: '',
+            correo: '',
+            clave: '',
+        },
+        validationSchema: registerSchema,
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        },
+  });
 
-    // Recibimos un evento, y de este evento usamos el target que es el elemento actual
-    handleChange = ({ target }) => {
-        const { name, value } = target;
-        this.setState({ [name]: value })
-    }
-
-    handleSubmit = e => {
-        //Evita que se envíe el formulario al hacer clic en el botón submit
-        e.preventDefault();
-        const { errors, ...fields } = this.state; // Se toma todos los elementos en el state menos los errores
-        const result = validate(fields);
-        // Object.keys : Me devuelve un arreglo con las propiedades del objeto
-        this.setState({errors: result});
-        if (!Object.keys(result).length) {
-            // Enviar el formulario!!!
-            console.log('formulario valido');
-            // Reinicia el formulario
-            e.target.reset();
-        }
-    }
-}
+  return (
+    <form onSubmit={formik.handleSubmit}>
+        <Row>
+            <TextInput label='Nombres:' name="nombres" id='nombres' s={12} m={6} l={6}
+                {...formik.getFieldProps('nombres')}
+                children={formik.touched.nombres && formik.errors.nombres ? (<span className="helper-text">{formik.errors.nombres}</span>) : null}
+            />
+            <TextInput label='Apellidos:' name="apellidos" id='apellidos' s={12} m={6} l={6}
+                {...formik.getFieldProps('apellidos')}
+                children={formik.touched.apellidos && formik.errors.apellidos ? (<span className="helper-text">{formik.errors.apellidos}</span>) : null}
+            />
+            <TextInput label='Correo:' email name="correo" id='correo' s={12} m={7} l={7}
+                {...formik.getFieldProps('correo')}
+                children={formik.touched.correo && formik.errors.correo ? (<span className="helper-text">{formik.errors.correo}</span>) : null}
+            />
+            <TextInput label='Clave:' password name='clave' id='clave' s={12} m={5} l={5}
+                {...formik.getFieldProps('clave')}
+                children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text">{formik.errors.clave}</span>) : null}
+            />
+            <Button type='submit' className='col s12' >
+                Enviar
+            </Button>
+        </Row>
+    </form>
+  );
+};
