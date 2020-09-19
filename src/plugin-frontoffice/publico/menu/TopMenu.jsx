@@ -2,9 +2,16 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Navbar, NavItem, Icon  } from 'react-materialize';
 
+const style = {
+    menuColor: {
+        backgroundColor: '#26a69a',
+    }
+}
+
 export function TopMenu () {
+    const { menuColor } = style;
     return (
-        <Navbar
+        <Navbar style={menuColor}
             alignLinks="right"
             brand={<Link to='/' className="brand-logo">Home</Link>}
             centerChildren
@@ -23,10 +30,10 @@ export function TopMenu () {
             }}
         >
             <NavItem href="/">
-                Getting started
+                Inicio
             </NavItem>
             <NavItem href="/">
-                Components
+                Nosotros
             </NavItem>
         </Navbar>
     )

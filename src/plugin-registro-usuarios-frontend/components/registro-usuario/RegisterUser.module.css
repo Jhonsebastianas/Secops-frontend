@@ -1,19 +1,8 @@
-div.card-registro {
+div.cardRegistro {
     margin-top: 17%;
 }
 
-html,body{
-    height:100%;
-    width:100%;
-    margin: 0px;
-}
-
-.parallax img {
-    opacity: 0.6 !important;
-}
-
-
-.parallax-container {
+.parallaxContainer {
     height: 100%;
     width: 100% ;
     background: no-repeat fixed center;
@@ -22,4 +11,8 @@ html,body{
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
+}
+
+.parallax img {
+    opacity: 0.6 !important;
 }
