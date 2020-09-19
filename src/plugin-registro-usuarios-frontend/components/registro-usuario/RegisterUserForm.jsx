@@ -14,7 +14,7 @@ export const RegisterUserForm = () => {
         correo: Yup.string().trim()
             .required('Este campo es obligatorio')
             .email('Correo electronico invalido')
-            .min(3, 'Mínimo 5 caracteres'),
+            .min(5, 'Mínimo 5 caracteres'),
         clave: Yup.string()
             .required('Este campo es obligatorio')
             .matches('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$', 'La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.')

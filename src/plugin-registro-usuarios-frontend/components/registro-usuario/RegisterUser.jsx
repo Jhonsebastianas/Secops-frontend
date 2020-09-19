@@ -4,7 +4,7 @@ import './RegisterUser.css';
 // Images
 import backgroundImage from '../../../assets/images/money-bg.jpg';
 // Others
-import { Row, Col, Card, Parallax } from 'react-materialize';
+import { Row, Col, Card } from 'react-materialize';
 import { RegisterUserForm } from './RegisterUserForm';
 import { Link } from "react-router-dom";
 
