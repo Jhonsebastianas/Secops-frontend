@@ -1,10 +1,14 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
+import { Services } from '../../services/services';
 import { Button, TextInput, Row } from 'react-materialize';
 
+import { useToasts } from 'react-toast-notifications'
+
 export const RegisterUserForm = () => {
+
+    const { addToast } = useToasts()
 
     const registerSchema = Yup.object().shape({
         nombres: Yup.string().trim()
@@ -20,6 +24,25 @@ export const RegisterUserForm = () => {
             .matches('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$', 'La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.')
     });
 
+    const registerNewUser = (values) => {
+        Services.newUser(values, ({ data }) => {
+            const { token } = data;
+            localStorage.setItem('tokenHA', token);
+            console.log(data);
+            addToast('¡Usuario registrado con exito!', { appearance: 'success' });
+            // window.location.href = "/alerta-enviada/activar-cuenta";
+        }, (error) => {
+            const { status } = error.response;
+            if(status === 409){
+                addToast('Cuenta actualmente existente', { appearance: 'info' });
+            } else if (status === 422) {
+                addToast('Valida la información, por favor', { appearance: 'warning' });
+            } else if (status === 500) {
+                addToast('oh no :(, no eres tú somos nosotros, algo a ido mal.', { appearance: 'error' });
+            }
+        });
+    }
+
     const formik = useFormik({
         initialValues: {
             nombres: '',
@@ -28,9 +51,7 @@ export const RegisterUserForm = () => {
             clave: '',
         },
         validationSchema: registerSchema,
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        },
+        onSubmit: registerNewUser,
     });
 
     return (
@@ -52,7 +73,7 @@ export const RegisterUserForm = () => {
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />
-                <Button type='submit' className='col s12' >
+                <Button type='submit' className='col s12' disabled={!formik.isValid} >
                     Enviar
                 </Button>
             </Row>

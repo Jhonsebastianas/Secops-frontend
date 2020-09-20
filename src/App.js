@@ -4,6 +4,12 @@ import './App.css';
 import RouterPrincipal from './RouterPrincipal';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      login: false
+    }
+  }
   render() {
     return (
       <RouterPrincipal />
