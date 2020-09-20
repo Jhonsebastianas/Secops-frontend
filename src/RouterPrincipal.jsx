@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 // Plugins a hacer routing
 import RegisterUser from './plugin-registro-usuarios-frontend/components/registro-usuario/RegisterUser';
+import Nosotros from './plugin-nosotros-fronted/components/nosotros-page/Nosotros';
 import { Inicio } from './plugin-frontoffice/publico/Inicio/Inicio';
 
 export default function RouterPrincipal () {
@@ -18,6 +19,10 @@ export default function RouterPrincipal () {
                 <Route path="/registro">
                     <RegisterUser />
                 </Route>
+                <Route path="/nosotros">
+                    <Nosotros />
+                </Route>
+                
             </Switch>
         </Router>
     );

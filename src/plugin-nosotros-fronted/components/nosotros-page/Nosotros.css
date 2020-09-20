@@ -1,0 +1,68 @@
+.alinear{
+    text-align: center ;
+}
+.centrar{
+    justify-content: center;;}
+.tamano{
+    width: 50%;
+}
+
+.containerMain{
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+
+.containerMain h4{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.containerMain .imgContent{
+    width: 480px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    overflow: hidden;
+    background: url("https://lh3.googleusercontent.com/proxy/Zka5oER96hFPAAUyEv3xGDg2DjlMZbGimIuRyj7Y8t7WWLkEHyikfgO3czFuCgpXRl7GtL6rhTYp2kAQzoEp4xYgF_ZAZCr3XraNVbso6n9vhw9khAAvUSaFO0disLPHHw8RnNn2uW-A6hu_w07NpYGE6u2Uo-pqi9a25Qqa4k-GBMKrwz5oTAeMD2IdutdmdsnDA1OKRA");
+    background-size: cover;
+}
+
+#limon{
+    background: url("https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Mision-vision-valores.jpg");
+}
+
+.containerMain .imgContent ul{
+    width: 90%;
+    height: 90%;
+    background: rgba(50, 157, 236, 0.9);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    box-sizing: border-box;
+    position: relative;
+    top: 100%;
+    transition: all 1s;
+    
+}
+
+.containerMain .imgContent:hover ul{
+    top: 0;
+}
+
+.imgContent ul p{
+    font-size: 1.0em;
+    margin: 5px 15px 15px 15px;
+    list-style: inside;
+}
+h4{
+    color: black;
+    text-align: center;
+}
+h5{
+    color: white;
+}
