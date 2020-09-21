@@ -7,6 +7,7 @@ import {
 // Plugins a hacer routing
 import RegisterUser from './plugin-registro-usuarios-frontend/components/registro-usuario/RegisterUser';
 import { Inicio } from './plugin-frontoffice/publico/Inicio/Inicio';
+import {Contactanos} from './plugin-frontoffice/publico/contactanos/Contactanos';
 
 export default function RouterPrincipal () {
     return (
@@ -17,6 +18,9 @@ export default function RouterPrincipal () {
                 </Route>
                 <Route path="/registro">
                     <RegisterUser />
+                </Route>
+                <Route path="/contactanos">
+                    <Contactanos />
                 </Route>
             </Switch>
         </Router>
