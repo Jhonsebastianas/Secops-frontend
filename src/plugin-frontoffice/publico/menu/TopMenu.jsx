@@ -32,7 +32,7 @@ export function TopMenu () {
             <NavItem href="/">
                 Inicio
             </NavItem>
-            <NavItem href="/">
+            <NavItem href="/nosotros">
                 Nosotros
             </NavItem>
         </Navbar>

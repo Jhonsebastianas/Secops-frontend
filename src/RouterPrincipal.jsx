@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 // Plugins a hacer routing
 import RegisterUser from './plugin-registro-usuarios-frontend/components/registro-usuario/RegisterUser';
-import Nosotros from "./plugin-nosotros-fronted/components/nosotros-page/Nosotros";
+import Nosotros from "./plugin-frontoffice/publico/nosotros/Nosotros";
 import { Inicio } from './plugin-frontoffice/publico/Inicio/Inicio';
 
 // Toast

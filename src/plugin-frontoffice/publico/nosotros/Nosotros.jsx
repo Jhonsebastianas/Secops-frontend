@@ -46,9 +46,9 @@ export default class Nosotros extends Component {
                       <h5>Información</h5>
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         met quae recusandae fugit ipsam eos distinctio nam id
-                          ias magnam, dolore libero placeat commodi saepe cum ipsum
-                           it molestiae odio cupiditate!
+                        met quae recusandae fugit ipsam eos distinctio nam id
+                        ias magnam, dolore libero placeat commodi saepe cum ipsum
+                        it molestiae odio cupiditate!
                            </p>
                     </ul>
                   </div>
@@ -63,9 +63,9 @@ export default class Nosotros extends Component {
                       <h5>Información</h5>
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         met quae recusandae fugit ipsam eos distinctio nam id
-                          ias magnam, dolore libero placeat commodi saepe cum ipsum
-                           it molestiae odio cupiditate!
+                        met quae recusandae fugit ipsam eos distinctio nam id
+                        ias magnam, dolore libero placeat commodi saepe cum ipsum
+                        it molestiae odio cupiditate!
                            </p>
                     </ul>
                   </div>
