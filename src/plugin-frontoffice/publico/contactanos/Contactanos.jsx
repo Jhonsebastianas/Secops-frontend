@@ -1,13 +1,12 @@
 import React from 'react';
 import { TopMenu } from '../menu/TopMenu';
 import styles from './Contactanos.module.css';
-import { Row, Col, Card } from 'react-materialize';
-import { Link } from "react-router-dom";
+import { Row, Col, Card, Preloader } from 'react-materialize';
 // Images
 import backgroundImage from '../../../assets/images/contactanos.svg';
 
 export function Contactanos() {
-    const { parallaxContainer, cardRegistro, parallax, apodoAlmacen, light, iconPhone, ladoInforamcion, nombreAlmacen, googleMaps,responsiveIframe,informacionContacto } = styles;
+    const { parallaxContainer, cardRegistro, parallax, apodoAlmacen, light, iconPhone, ladoInforamcion, nombreAlmacen, googleMaps, responsiveIframe, informacionContacto } = styles;
     return (
         <div>
             <TopMenu />
@@ -20,25 +19,23 @@ export function Contactanos() {
                                 <div class="row">
                                     <div className="col s12 m6">
                                         <div class="icon-block">
-                                            <img height="280dv" src={backgroundImage} alt="Unsplashed background img 1" />
+                                            <img height="280dv" className='responsive-img' src={backgroundImage} alt="Unsplashed background img 1" />
                                         </div>
                                         <h1>Contáctenos</h1>
                                     </div>
-
-                                    <div className={ladoInforamcion + " col s12 m6"}>
+                                    <Col s={12} m={6} className={ladoInforamcion}>
                                         <h2 class={apodoAlmacen + " center"}><strong>ALIS</strong></h2>
                                         <h5 className={nombreAlmacen + " center nombre-almacen"}>(Almacen La Isla)</h5>
                                         <h2 className={light + " light-blue-text"}><i className={iconPhone + " material-icons"}>contact_phone</i></h2>
                                         <p className={informacionContacto}>Líneas de atención <br />Teléfono: 8951351<br />Celular: 3009874562</p>
                                         <h2 className={light + " light-blue-text"}><i className={iconPhone + " material-icons"}>email</i></h2>
                                         <p className="">Redes sociales <br />Gmail: almacenIsla@gmail.com<br /></p>
-                                    </div>
-
+                                    </Col>
                                 </div>
                                 <section>
                                     <div className="map" >
                                         <h5>
-                                            Estamos ubicados en: 
+                                            Estamos ubicados en:
                                          </h5>
                                         <p>
                                             1600 Pennsylvania Avenue NW, Washington, DC 20500, Estados Unidos
@@ -57,7 +54,6 @@ export function Contactanos() {
                                 </section>
                             </div>
                         </Card>
-
                     </Col>
                     <Col s={4}></Col>
                 </Row>

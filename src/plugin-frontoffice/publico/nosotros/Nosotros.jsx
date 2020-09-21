@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import styles from './Nosotros.css';
-import { Parallax } from 'react-materialize';
+import styles from './Nosotros.module.css';
+import { Parallax, Container, Col } from 'react-materialize';
+
+import { TopMenu } from '../menu/TopMenu';
 
 
 export default class Nosotros extends Component {
   render() {
+    const { tamano } = styles;
     return (
       <div>
+        <TopMenu />
         <Parallax
           image={<img alt=""
             src="https://mijobrands.com/wp-content/uploads/2018/07/brainstorming-d48e541c.jpg" />}
@@ -14,8 +18,8 @@ export default class Nosotros extends Component {
             responsiveThreshold: 0
           }} />
         <div className="section white centrar">
-          <div className="row container">
-            <hr className=" tamano" />
+          <Container>
+            <hr className={tamano} />
             <h2 className="header alinear">NOSOTROS</h2>
             <hr className=" tamano" />
             <p className="grey-text text-darken-3 lighten-3">
@@ -55,7 +59,7 @@ export default class Nosotros extends Component {
                 </div>
               </div>
 
-              <div className="col l6">
+              <Col l={6}>
                 <h4>Misión</h4>
                 <div className="col l4">
                   <div className="imgContent" id="limon">
@@ -70,14 +74,11 @@ export default class Nosotros extends Component {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </Col>
             </div>
-          </div>
+          </Container>
         </div>
-
       </div>
-
-
     );
   }
 }
