@@ -35,6 +35,9 @@ export function TopMenu () {
             <NavItem href="/nosotros">
                 Nosotros
             </NavItem>
+            <NavItem href="/contactanos">
+                Contáctanos
+            </NavItem>
         </Navbar>
     )
 }
