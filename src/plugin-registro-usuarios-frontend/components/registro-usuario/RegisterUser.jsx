@@ -8,25 +8,6 @@ import { Row, Col, Card } from 'react-materialize';
 import { RegisterUserForm } from './RegisterUserForm';
 import { Link } from "react-router-dom";
 
-// const styles = {
-//     CardRegistro: {
-//         marginTop: '17%',
-//     },
-//     parallaxContainer: {
-//         height: '100%',
-//         width: '100%',
-//         background: 'no-repeat fixed center',
-//         WebkitBackgroundSize: 'cover',
-//         MozBackgroundSize: 'cover',
-//         OBackgroundSize: 'cover',
-//         backgroundSize: 'cover',
-//         height: '100vh',
-//     },
-//     parallax_img: {
-//         opacity: '0.6 !important',
-//     }
-// }
-
 export default class RegisterUser extends Component {
     render() {
         const { parallaxContainer, cardRegistro, parallax } = styles;
