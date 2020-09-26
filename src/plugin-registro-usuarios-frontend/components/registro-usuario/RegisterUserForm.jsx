@@ -28,17 +28,20 @@ export const RegisterUserForm = () => {
         Services.newUser(values, ({ data }) => {
             const { token } = data;
             localStorage.setItem('tokenHA', token);
-            console.log(data);
             addToast('¡Usuario registrado con exito!', { appearance: 'success' });
             // window.location.href = "/alerta-enviada/activar-cuenta";
         }, (error) => {
-            const { status } = error.response;
-            if(status === 409){
-                addToast('Cuenta actualmente existente', { appearance: 'info' });
-            } else if (status === 422) {
-                addToast('Valida la información, por favor', { appearance: 'warning' });
-            } else if (status === 500) {
-                addToast('oh no :(, no eres tú somos nosotros, algo a ido mal.', { appearance: 'error' });
+            if (error.response) {
+                const { status } = error.response;
+                if (status === 409) {
+                    addToast('Cuenta actualmente existente', { appearance: 'info' });
+                } else if (status === 422) {
+                    addToast('Valida la información, por favor', { appearance: 'warning' });
+                } else if (status === 500) {
+                    addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                }
+            } else {
+                addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
             }
         });
     }
@@ -78,5 +81,5 @@ export const RegisterUserForm = () => {
                 </Button>
             </Row>
         </form>
-  );
+    );
 };

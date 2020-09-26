@@ -1,9 +1,10 @@
 import axios from 'axios';
+import ConstantsList from '../../Constants';
 
 export const Services = {
     newUser: (newUser, success, error) => {
-        console.log(newUser);
-        axios.post('http://localhost:3000/ha-backend/usuarios/registrarUsuarioNuevo', newUser)
+        const { API_ENDPOINT } = ConstantsList;
+        axios.post(API_ENDPOINT + 'usuarios/registrarUsuarioNuevo', newUser)
             .then(success)
             .catch(error);
     }
