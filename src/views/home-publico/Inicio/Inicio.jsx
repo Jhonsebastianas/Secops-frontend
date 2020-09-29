@@ -1,5 +1,5 @@
 import React from 'react';
-import firstBackImage from '../../../../assets/images/money-bg.jpg';
+import firstBackImage from '../../../assets/images/money-bg.jpg';
 import styles from './Inicio.module.css';
 import { TopMenu } from '../menu/TopMenu';
 import { Link } from "react-router-dom";
