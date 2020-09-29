@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 // Plugins a hacer routing
 import RegisterUser from '../plugin-registro-usuarios-frontend/views/registro-usuario/RegisterUser';
-import Nosotros from "../plugin-frontoffice/publico/nosotros/Nosotros";
-import { Inicio } from '../plugin-frontoffice/publico/Inicio/Inicio';
-import { Contactanos } from '../plugin-frontoffice/publico/contactanos/Contactanos';
+import Nosotros from "../plugin-frontoffice/views/home-publico/nosotros/Nosotros";
+import { Inicio } from '../plugin-frontoffice/views/home-publico/Inicio/Inicio';
+import { Contactanos } from '../plugin-frontoffice/views/home-publico/contactanos/Contactanos';
 import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
 
 // Toast
