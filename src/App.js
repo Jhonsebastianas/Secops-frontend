@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import RouterPrincipal from './RouterPrincipal';
+import RouterPrincipal from './routes/RouterPrincipal';
 
 class App extends Component {
   constructor() {
