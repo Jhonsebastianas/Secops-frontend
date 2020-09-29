@@ -5,11 +5,11 @@ import {
     Route
 } from "react-router-dom";
 // Plugins a hacer routing
-import RegisterUser from '../plugin-registro-usuarios-frontend/components/registro-usuario/RegisterUser';
+import RegisterUser from '../plugin-registro-usuarios-frontend/views/registro-usuario/RegisterUser';
 import Nosotros from "../plugin-frontoffice/publico/nosotros/Nosotros";
 import { Inicio } from '../plugin-frontoffice/publico/Inicio/Inicio';
 import { Contactanos } from '../plugin-frontoffice/publico/contactanos/Contactanos';
-import { Login } from '../plugin-loginjwt-frontend/components/login-page/Login';
+import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
 
 // Toast
 import { ToastProvider } from 'react-toast-notifications'
