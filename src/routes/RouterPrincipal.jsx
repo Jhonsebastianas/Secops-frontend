@@ -11,6 +11,7 @@ import { Inicio } from '../views/home-publico/Inicio/Inicio';
 import { Contactanos } from '../views/home-publico/contactanos/Contactanos';
 import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
 import { Home } from '../views/home-privado/Home';
+import { Notificacion } from '../views/notificacion/Notificacion';
 import ConstantsList from '../constants/Constants';
 // Toast
 import { ToastProvider } from 'react-toast-notifications'
@@ -35,6 +36,10 @@ export default function RouterPrincipal() {
                     <Route path="/login">
                         <Login />
                     </Route>
+                    <Route path="/notificacion/:nombrePlantilla">
+                        <Notificacion />
+                    </Route>
+                    {/* Rutas Privadas */}
                     <PrivateRoute path='/home'>
                         <Home />
                     </PrivateRoute>

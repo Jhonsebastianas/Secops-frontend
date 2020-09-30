@@ -28,14 +28,8 @@ export function TopMenu() {
             preventScrolling: true
         }}
     >
-        <NavItem href="/">
+        <NavItem href="/home">
             Inicio
-            </NavItem>
-        <NavItem href="/nosotros">
-            Nosotros
-            </NavItem>
-        <NavItem href="/contactanos">
-            Contáctanos
             </NavItem>
     </Navbar>)
 }
