@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { Services } from '../../services/services';
 import { Button, TextInput, Row } from 'react-materialize';
 
-import ConstantsList from '../../../Constants';
+import ConstantsList from '../../../constants/Constants';
 
 import { useToasts } from 'react-toast-notifications';
 
@@ -28,8 +28,8 @@ export const RegisterUserForm = () => {
 
     const registerNewUser = (values) => {
         Services.newUser(values, ({ data }) => {
-            const { token } = data;
-            localStorage.setItem(ConstantsList.TOKEN_NAME, token);
+            // const { token } = data;
+            // localStorage.setItem(ConstantsList.TOKEN_NAME, token);
             addToast('¡Usuario registrado con exito!', { appearance: 'success' });
             // window.location.href = "/alerta-enviada/activar-cuenta";
         }, (error) => {

@@ -2,14 +2,17 @@ import { useFormik } from 'formik';
 import React from 'react';
 import * as Yup from 'yup';
 import { Row, TextInput, Button } from 'react-materialize';
-import { Services } from '../../services';
+import { Services } from '../../services/services';
+import { useHistory } from 'react-router-dom';
 
-import ConstantsList from '../../../Constants';
+import ConstantsList from '../../../constants/Constants';
 import { useToasts } from 'react-toast-notifications';
 
 export function LoginForm() {
 
     const { addToast } = useToasts();
+
+    const history = useHistory();
 
     const loginSchema = Yup.object().shape({
         correo: Yup.string().trim()
@@ -20,11 +23,13 @@ export function LoginForm() {
     });
 
     const loginUser = values => {
-        Services.loginUser(values, ({ data }) => {
-            const { TOKEN_NAME } = ConstantsList;
+        Services.login(values, ({ data }) => {
+            const { TOKEN_NAME, USER_NAME } = ConstantsList;
             const { token } = data;
-            localStorage.setItem(TOKEN_NAME, token);
-            addToast('Ingreso exitoso', { appearance: 'success' });
+            const user = {};
+            user[TOKEN_NAME] = token;
+            localStorage.setItem(USER_NAME, JSON.stringify(user));
+            history.push("home");
         }, (error) => {
             if (error.response) {
                 const { status } = error.response;
@@ -61,6 +66,7 @@ export function LoginForm() {
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />
+                {}
                 <Button type='submit' className='col s12' disabled={!formik.isValid} >
                     Ingresar
                 </Button>

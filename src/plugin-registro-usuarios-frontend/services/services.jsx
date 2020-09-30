@@ -1,5 +1,5 @@
 import axios from 'axios';
-import ConstantsList from '../../Constants';
+import ConstantsList from '../../constants/Constants';
 
 export const Services = {
     newUser: (newUser, success, error) => {
