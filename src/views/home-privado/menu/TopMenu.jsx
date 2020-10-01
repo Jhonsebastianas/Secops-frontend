@@ -12,7 +12,7 @@ export function TopMenu() {
     const { menuColor } = style;
     return (<Navbar style={menuColor}
         alignLinks="right"
-        brand={<Link to='/' className="brand-logo">Home</Link>}
+        brand={<Link to='/home' className="brand-logo">Home</Link>}
         centerChildren
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
