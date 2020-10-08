@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import RouterPrincipal from './routes/RouterPrincipal';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      login: false
-    }
-  }
-  render() {
-    return (
-      <RouterPrincipal />
-    );
-  }
+function App() {
+  return (
+    <RouterPrincipal />
+  );
 }
 
 export default App;

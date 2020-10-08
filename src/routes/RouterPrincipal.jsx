@@ -14,37 +14,41 @@ import { Home } from '../views/home-privado/Home';
 import { Notificacion } from '../views/notificacion/Notificacion';
 import ConstantsList from '../constants/Constants';
 // Toast
-import { ToastProvider } from 'react-toast-notifications'
+import { ToastProvider } from 'react-toast-notifications';
+
+import { RecoilRoot } from 'recoil';
 
 export default function RouterPrincipal() {
     return (
         <Router>
-            <ToastProvider>
-                <Switch>
-                    <Route exact path="/">
-                        <Inicio />
-                    </Route>
-                    <Route path="/registro">
-                        <RegisterUser />
-                    </Route>
-                    <Route path="/contactanos">
-                        <Contactanos />
-                    </Route>
-                    <Route path="/nosotros">
-                        <Nosotros />
-                    </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    <Route path="/notificacion/:nombrePlantilla">
-                        <Notificacion />
-                    </Route>
-                    {/* Rutas Privadas */}
-                    <PrivateRoute path='/home'>
-                        <Home />
-                    </PrivateRoute>
-                </Switch>
-            </ToastProvider>
+            <RecoilRoot>
+                <ToastProvider>
+                    <Switch>
+                        <Route exact path="/">
+                            <Inicio />
+                        </Route>
+                        <Route path="/registro">
+                            <RegisterUser />
+                        </Route>
+                        <Route path="/contactanos">
+                            <Contactanos />
+                        </Route>
+                        <Route path="/nosotros">
+                            <Nosotros />
+                        </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="/notificacion/:nombrePlantilla">
+                            <Notificacion />
+                        </Route>
+                        {/* Rutas Privadas */}
+                        <PrivateRoute path='/home'>
+                            <Home />
+                        </PrivateRoute>
+                    </Switch>
+                </ToastProvider>
+            </RecoilRoot>
         </Router>
     );
 }

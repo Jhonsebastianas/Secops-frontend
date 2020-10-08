@@ -1,6 +1,6 @@
 {
-  "short_name": "Arjeware",
-  "name": "Cuenta tu consumo de servicios",
+  "short_name": "AW",
+  "name": "Arjeware",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/home",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
