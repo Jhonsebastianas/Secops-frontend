@@ -16,3 +16,8 @@ div.cardRegistro {
 .parallax img {
     opacity: 0.6 !important;
 }
+
+div.showPasswordIcon {
+    right: 0px !important;
+    cursor: pointer;
+}
