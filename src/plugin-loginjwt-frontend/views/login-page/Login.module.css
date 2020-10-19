@@ -16,3 +16,25 @@ div.cardLogin {
 .parallax img {
     opacity: 0.6 !important;
 }
+
+.boton{
+    width: 100%;
+    height: 36px;
+    margin-top:30px;
+    line-height: 18px;
+    border:  1px solid #b72500;
+    background-color: transparent;
+    border-radius: 2px;
+    color: #b72500;
+}
+
+.boton:hover{
+
+    color: white;
+    background-color: rgba(183, 37, 0, 0.9);
+}
+.imagenGoogle{
+    width: 4%;
+    height: auto;
+    margin-right: 10px;;
+}
