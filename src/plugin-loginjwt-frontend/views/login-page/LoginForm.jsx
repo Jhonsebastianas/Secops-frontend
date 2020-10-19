@@ -3,7 +3,8 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Row, TextInput, Button } from 'react-materialize';
 import { Services } from '../../services/services';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'; 
+import { GoogleLogin } from 'react-google-login';
 
 import ConstantsList from '../../../constants/Constants';
 import { useToasts } from 'react-toast-notifications';
@@ -55,6 +56,11 @@ export function LoginForm() {
         onSubmit: loginUser,
     });
 
+    const responseGoogle = (response) => {
+        console.log(response);
+        console.log(response.profileObj);
+    }
+
     return (
         <form onSubmit={formik.handleSubmit}>
             <Row>
@@ -66,10 +72,19 @@ export function LoginForm() {
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />
-                {}
+               
                 <Button type='submit' className='col s12' disabled={!formik.isValid} >
                     Ingresar
                 </Button>
+                
+                <h4> ---- o ---- </h4>
+                <GoogleLogin
+                    clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
+                    buttonText="Login"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                />
             </Row>
         </form>
     );

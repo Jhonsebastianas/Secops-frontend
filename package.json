@@ -11,10 +11,12 @@
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-login": "^5.1.21",
     "react-materialize": "^3.9.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-toast-notifications": "^2.4.0",
+    "recoil": "0.0.13",
     "yup": "^0.29.3"
   },
   "scripts": {
