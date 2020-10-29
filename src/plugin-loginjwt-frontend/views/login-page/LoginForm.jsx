@@ -3,7 +3,14 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Row, TextInput, Button } from 'react-materialize';
 import { Services } from '../../services/services';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'; 
+import { GoogleLogin } from 'react-google-login';
+
+// CSS
+import styles from './Login.module.css';
+
+//Imagen de Google
+import Google from '../../../assets/images/google.svg';
 
 import ConstantsList from '../../../constants/Constants';
 import { useToasts } from 'react-toast-notifications';
@@ -11,6 +18,8 @@ import { useToasts } from 'react-toast-notifications';
 export function LoginForm() {
 
     const { addToast } = useToasts();
+
+    const {boton, imagenGoogle} = styles;
 
     const history = useHistory();
 
@@ -55,6 +64,11 @@ export function LoginForm() {
         onSubmit: loginUser,
     });
 
+    const respuestaGoogle = (response) => {
+        console.log(response);
+        console.log(response.profileObj);
+    }
+
     return (
         <form onSubmit={formik.handleSubmit}>
             <Row>
@@ -66,10 +80,22 @@ export function LoginForm() {
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />
-                {}
+               
                 <Button type='submit' className='col s12' disabled={!formik.isValid} >
                     Ingresar
                 </Button>
+                
+                <GoogleLogin 
+                    clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
+                    render={renderProps => (
+                        <button className={boton} onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                        <img className={imagenGoogle} src={Google}></img>
+                        Google</button>
+                      )}
+                    onSuccess={respuestaGoogle}
+                    onFailure={respuestaGoogle}
+                    cookiePolicy={'single_host_origin'}
+                />
             </Row>
         </form>
     );
