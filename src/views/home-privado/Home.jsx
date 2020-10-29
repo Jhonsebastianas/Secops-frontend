@@ -1,24 +1,84 @@
 import React from 'react';
 import { TopMenu } from './menu/TopMenu';
-import { ButtonMenu } from '../../components/common/ButtonMenu';
+import imgAgua from '../../assets/images/servicios/agua1.png';
+import imgEnergia from '../../assets/images/servicios/energia1.png';
+import imgGas from '../../assets/images/servicios/gas1.png';
 
-// Ejemplo estado recoil
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { counterState } from '../../stateManagement/recoil/atoms/atomEjemplo';
-import { incrementSelector } from '../../stateManagement/recoil/selectors/selectorEjemplo';
-import { Button } from 'react-materialize';
+import { Button, Container, Collapsible, CollapsibleItem, Icon, Row, Col, Card, CardTitle, CardPanel } from 'react-materialize';
 
 export function Home() {
-    const [count, setCounter] = useRecoilState(counterState);
-    let value = useRecoilValue(incrementSelector)
     return (
         <div>
             <TopMenu />
-            <h1>{count}</h1>
-            <ButtonMenu/>
-            <Button onClick={() => setCounter(value)}>
-                +
-            </Button>
+            <Container>
+                <h6>Resumen consumo de servicios públicos</h6>
+                <p>En esta sección encontraras un resumen de tus gastos</p>
+                <Collapsible accordion popout >
+                    <CollapsibleItem
+                        expanded
+                        header="Hogar actual"
+                        icon={<Icon>home</Icon>}
+                        node="div"
+                    >
+                        <Col m={12}>
+                            Información de tu hogar
+                        </Col>
+                        <Row>
+                            <CardPanel className="">
+                                <span className="black-text">
+                                    C ontrato: x123 | Estrato: 3
+                                </span>
+                            </CardPanel>
+                            <Row>
+                                <Col m={12}>
+                                    Información de tus servicios
+                                </Col>
+                                <Col m={4}>
+                                    <Card
+                                        actions={[
+                                            <a key="1" href="#">Ver al detalle</a>
+                                        ]}
+                                        closeIcon={<Icon>close</Icon>}
+                                        header={<CardTitle image={imgAgua} />}
+                                        horizontal
+                                        revealIcon={<Icon>more_vert</Icon>}
+                                    >
+                                        AGUA
+                                    </Card>
+                                </Col>
+                                <Col m={4}>
+                                    <Card
+                                        actions={[
+                                            <a key="1" href="#">Ver al detalle</a>
+                                        ]}
+                                        closeIcon={<Icon>close</Icon>}
+                                        header={<CardTitle image={imgEnergia} />}
+                                        horizontal
+                                        revealIcon={<Icon>more_vert</Icon>}
+                                    >
+                                        ENERGÍA
+                                    </Card>
+                                </Col>
+                                <Col m={4}>
+                                    <Card
+                                        actions={[
+                                            <a key="1" href="#">Ver al detalle</a>
+                                        ]}
+                                        closeIcon={<Icon>close</Icon>}
+                                        header={<CardTitle image={imgGas    } />}
+                                        horizontal
+                                        revealIcon={<Icon>more_vert</Icon>}
+                                    >
+                                        GAS
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </Row>
+
+
+                    </CollapsibleItem>
+                </Collapsible>
+            </Container>
         </div>
     );
 }
