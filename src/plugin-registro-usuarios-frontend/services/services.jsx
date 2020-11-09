@@ -7,5 +7,11 @@ export const Services = {
         axios.post(API_ENDPOINT + 'usuarios/registrarUsuarioNuevo', newUser)
             .then(success)
             .catch(error);
+    },
+    newGoogleUser: (googleUser, success, error) => {
+        const { API_ENDPOINT } = ConstantsList;
+        axios.post(API_ENDPOINT + 'usuarios/createUserWithGoogle', googleUser)
+            .then(success)
+            .catch(error);
     }
 }

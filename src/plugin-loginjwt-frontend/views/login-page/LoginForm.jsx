@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
 // CSS
-import styles from './Login.module.css';
+import stylesGoogle from '../../../styles/stylesGoogle.module.css';
 
 //Imagen de Google
 import Google from '../../../assets/images/google.svg';
@@ -19,7 +19,7 @@ export function LoginForm() {
 
     const { addToast } = useToasts();
 
-    const {boton, imagenGoogle} = styles;
+    const {boton, imagenGoogle} = stylesGoogle;
 
     const history = useHistory();
 
@@ -42,7 +42,9 @@ export function LoginForm() {
         }, (error) => {
             if (error.response) {
                 const { status } = error.response;
-                if (status === 401) {
+                if(status == 400) {
+                    addToast('Cuenta registrada con Google', { appearance: 'warning' });
+                } else if (status === 401) {
                     addToast('Valida la información por favor', { appearance: 'warning' });
                 } else if (status === 403) {
                     addToast('Aún no has activado tu cuenta', { appearance: 'info' });
@@ -111,7 +113,7 @@ export function LoginForm() {
                     render={renderProps => (
                         <button className={boton} onClick={renderProps.onClick} disabled={renderProps.disabled}>
                         <img className={imagenGoogle} src={Google}></img>
-                        Google</button>
+                        Ingresa con Google</button>
                       )}
                     onSuccess={respuestaGoogle}
                     onFailure={respuestaGoogle}
