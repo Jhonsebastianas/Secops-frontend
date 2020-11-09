@@ -1,6 +1,6 @@
 module.exports = Object.freeze({
     // Información principal
-    APP_NAME: 'Arjeware',
+    APP_NAME: 'Secops',
     // API
     API_ENDPOINT: 'http://localhost:3000/ha-backend/',
     //Tokens
