@@ -67,6 +67,27 @@ export function LoginForm() {
     const respuestaGoogle = (response) => {
         console.log(response);
         console.log(response.profileObj);
+        Services.loginWithGoogle(response.profileObj, ({data}) => {
+            const { TOKEN_NAME, USER_NAME } = ConstantsList;
+            const { token } = data;
+            const user = {};
+            user[TOKEN_NAME] = token;
+            localStorage.setItem(USER_NAME, JSON.stringify(user));
+            history.push("home");
+        }, (error) => {
+            if (error.response) {
+                const { status } = error.response;
+                if (status === 401) {
+                    addToast('Valida la información por favor', { appearance: 'warning' });
+                } else if (status === 403) {
+                    addToast('Aún no has activado tu cuenta', { appearance: 'info' });
+                } else {
+                    addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                }
+            } else {
+                addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+            }
+        });
     }
 
     return (

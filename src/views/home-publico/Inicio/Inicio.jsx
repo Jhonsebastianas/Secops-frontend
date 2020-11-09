@@ -4,6 +4,7 @@ import styles from './Inicio.module.css';
 import { TopMenu } from '../menu/TopMenu';
 import { Link } from "react-router-dom";
 import { Row, Col, Container } from 'react-materialize';
+import { APP_NAME } from '../../../constants/Constants';
 
 export function Inicio() {
     const { parallaxContainer, parallax } = styles;
@@ -14,7 +15,7 @@ export function Inicio() {
                 <div className="section no-pad-bot">
                     <Container>
                         <br></br><br></br>
-                        <h1 className="header center teal-text text-lighten-2">Home administrator</h1>
+                        <h1 className="header center teal-text text-lighten-2">{APP_NAME}</h1>
                         <Row className='center' >
                             <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu inventario.</h5>
                         </Row>
