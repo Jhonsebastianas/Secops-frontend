@@ -6,6 +6,7 @@ import styles from './Login.module.css';
 import backgroundImage from '../../../assets/images/money-bg.jpg';
 // Materialize
 import { Row, Col, Card  } from 'react-materialize';
+import { Link } from 'react-router-dom';
 
 export function Login() {
 
@@ -21,7 +22,7 @@ export function Login() {
                             <h6>INICIO DE SESSIÓN</h6>
                             <LoginForm />
                             <div class="center-align">
-                                <a class="">¿Olvidaste tu contraseña?</a>
+                            <Link to='registro/recuperar-cuenta'>¿Olvidaste tu contraseña?</Link>
                             </div>
                             <a href="/" class="">VOLVER</a>
                         </div>

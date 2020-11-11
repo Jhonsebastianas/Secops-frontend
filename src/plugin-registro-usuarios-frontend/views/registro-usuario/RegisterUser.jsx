@@ -21,7 +21,7 @@ export default class RegisterUser extends Component {
                                 <h6>INFORMACIÓN REGISTRO:</h6>
                                 <RegisterUserForm />
                                 <div className="center-align">
-                                    <a className="">¿Olvidaste tu contraseña?</a>
+                                    <Link to='registro/recuperar-cuenta'>¿Olvidaste tu contraseña?</Link>
                                 </div>
                                 <Link to="/">VOLVER</Link>
                             </div>
