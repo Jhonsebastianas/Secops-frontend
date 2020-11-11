@@ -15,6 +15,14 @@ module.exports = Object.freeze(
             descripcion: 'Tu cuenta a sido activada exitosamente, ya puedes disfrutar de la aplicación.',
             tituloBoton: 'Iniciar sesión',
             rutaBoton: '/login',
-        }
+        },
+        {
+            nombre: 'recuperar-cuenta',
+            nombreImagen: 'MailSend.png',
+            titulo: 'Correo de recuperación envíado',
+            descripcion: 'Hemos enviado una notificación para recuperar tu cuenta, revisa tu correo.',
+            tituloBoton: 'Voler al inicio',
+            rutaBoton: '/',
+        },
     ]
 );
