@@ -18,7 +18,7 @@ export function Inicio() {
                         <br></br><br></br>
                         <h1 className="header center teal-text text-lighten-2">{APP_NAME}</h1>
                         <Row className='center' >
-                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu inventario.</h5>
+                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu consumo en servicios públicos.</h5>
                         </Row>
                         <Row className='center' >
                             <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Inicia sesión</Link>

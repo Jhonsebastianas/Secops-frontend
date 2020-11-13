@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useFormik } from 'formik';
+import { Form, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Services } from '../../services/services';
+import { PasswordField } from '../../../components/common/inputs/password/PasswordField';
 import { Button, TextInput, Row, Icon } from 'react-materialize';
 import { GoogleLogin } from 'react-google-login';
 
@@ -11,27 +12,10 @@ import { useToasts } from 'react-toast-notifications';
 import stylesGoogle from '../../../styles/stylesGoogle.module.css';
 import GoogleImage from '../../../assets/images/google.svg';
 
-const styles = {
-    showPasswordDiv: {
-        right: '0px',
-        cursor: 'pointer',
-        zIndex: '9999',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        MsUserSelect: 'none',
-        UserSelect: 'none',
-    },
-    showPasswordIcon: {
-        cursor: 'pointer',
-        zIndex: '9999',
-    }
-};
 
 export const RegisterUserForm = () => {
 
     const { boton, imagenGoogle } = stylesGoogle;
-
-    const { showPasswordDiv, showPasswordIcon } = styles;
     const { addToast } = useToasts();
     const history = useHistory();
 
@@ -80,13 +64,6 @@ export const RegisterUserForm = () => {
         onSubmit: registerNewUser,
     });
 
-    /**  Mostramos y no mostramos la clave */
-    const [visiblePassword, setVisiblePassword] = useState('password');
-    const showPassword = () => {
-        const typeInput = (visiblePassword === 'password') ? 'text' : 'password';
-        setVisiblePassword(typeInput);
-    }
-
     /**
      * Sing up with google
      */
@@ -134,8 +111,7 @@ export const RegisterUserForm = () => {
                     {...formik.getFieldProps('correo')}
                     children={formik.touched.correo && formik.errors.correo ? (<span className="helper-text red-text">{formik.errors.correo}</span>) : null}
                 />
-                <TextInput label='Clave:' type={visiblePassword} name='clave' id='clave' s={12} m={5} l={5}
-                    icon={<div style={showPasswordDiv} onClick={showPassword}><Icon className={showPasswordIcon}>visibility</Icon></div>}
+                <PasswordField label='Clave:' name='clave' id='clave' s={12} m={5} l={5}
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />

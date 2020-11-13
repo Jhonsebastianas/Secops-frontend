@@ -1,31 +1,14 @@
-import React, { useState } from 'react';
-import { Row, TextInput, Button, Icon } from 'react-materialize';
+import React from 'react';
+import { Row, Button } from 'react-materialize';
 import { useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 import { Services } from '../../../services/services';
 import { useParams } from "react-router-dom";
 import { useFormik } from 'formik';
+import { PasswordField } from '../../../../components/common/inputs/password/PasswordField';
 import * as Yup from 'yup';
 
-const styles = {
-    showPasswordDiv: {
-        right: '0px',
-        cursor: 'pointer',
-        zIndex: '9999',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        MsUserSelect: 'none',
-        UserSelect: 'none',
-    },
-    showPasswordIcon: {
-        cursor: 'pointer',
-        zIndex: '9999',
-    }
-};
-
 export function RestablecerClaveForm() {
-
-    const { showPasswordDiv, showPasswordIcon } = styles;
     const { tokenUsuario } = useParams();
     const { addToast } = useToasts();
     const history = useHistory();
@@ -33,7 +16,11 @@ export function RestablecerClaveForm() {
     const newPasswordSchema = Yup.object().shape({
         clave: Yup.string()
             .required('Este campo es obligatorio')
-            .matches('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$', 'La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.')
+            .matches('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,20}$', 'La clave debe tener al entre 8 y 20 caracteres, un dígito, una letra minúscula y una letra mayúscula.'),
+        claveConfirmada: Yup.string()
+            .test('ok', 'Las constaseñas no coinciden', function (value) {
+                return this.parent.clave === value;
+            }),
     });
 
     const restablecerClave = (value) => {
@@ -43,6 +30,7 @@ export function RestablecerClaveForm() {
         }
         Services.restablecerClave(parametros, ({ data }) => {
             addToast('Contraseña restablecida', { appearance: 'success' });
+            history.push("/login");
         }, (error) => {
             if (error.response) {
                 const { status } = error.response;
@@ -63,25 +51,22 @@ export function RestablecerClaveForm() {
     const formik = useFormik({
         initialValues: {
             clave: '',
+            claveConfirmada: '',
         },
         validationSchema: newPasswordSchema,
         onSubmit: restablecerClave,
     });
 
-    /**  Mostramos y no mostramos la clave */
-    const [visiblePassword, setVisiblePassword] = useState('password');
-    const showPassword = () => {
-        const typeInput = (visiblePassword === 'password') ? 'text' : 'password';
-        setVisiblePassword(typeInput);
-    }
-
     return (
         <form onSubmit={formik.handleSubmit}>
             <Row>
-                <TextInput label='Clave:' type={visiblePassword} name='clave' id='clave' s={12}
-                    icon={<div style={showPasswordDiv} onClick={showPassword}><Icon className={showPasswordIcon}>visibility</Icon></div>}
+                <PasswordField label='Nueva contraseña' name='clave' id='clave' s={12}
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
+                />
+                <PasswordField label='Repetir contraseña' name='claveConfirmada' id='claveConfirmada' s={12}
+                    {...formik.getFieldProps('claveConfirmada')}
+                    children={formik.touched.claveConfirmada && formik.errors.claveConfirmada ? (<span className="helper-text red-text">{formik.errors.claveConfirmada}</span>) : null}
                 />
                 <Button type='submit' className='col s12' disabled={!formik.isValid}>
                     Restablecer
