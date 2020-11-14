@@ -19,7 +19,7 @@ export function Login() {
                 <Col s={12} m={6} l={6}>
                     <Card className={cardLogin}>
                         <div class="card-content">
-                            <h6>INICIO DE SESSIÓN</h6>
+                            <h6>INICIO DE SESIÓN</h6>
                             <LoginForm />
                             <div class="center-align">
                             <Link to='registro/recuperar-cuenta'>¿Olvidaste tu contraseña?</Link>

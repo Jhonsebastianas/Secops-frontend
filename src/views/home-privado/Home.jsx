@@ -26,7 +26,7 @@ export function Home() {
                         <Row>
                             <CardPanel className="">
                                 <span className="black-text">
-                                    C ontrato: x123 | Estrato: 3
+                                    Contrato: x123 | Estrato: 3
                                 </span>
                             </CardPanel>
                             <Row>

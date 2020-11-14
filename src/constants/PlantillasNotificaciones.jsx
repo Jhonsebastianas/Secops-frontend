@@ -19,7 +19,7 @@ module.exports = Object.freeze(
         {
             nombre: 'recuperar-cuenta',
             nombreImagen: 'MailSend.png',
-            titulo: 'Correo de recuperación envíado',
+            titulo: 'Correo de recuperación enviado',
             descripcion: 'Hemos enviado una notificación para recuperar tu cuenta, revisa tu correo.',
             tituloBoton: 'Voler al inicio',
             rutaBoton: '/',
