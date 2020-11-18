@@ -17,26 +17,3 @@ div.cardLogin {
     opacity: 0.6 !important;
 }
 
-.botonGoogle{
-    width: 100% !important;
-    height: 36px;
-    margin-top:30px;
-    text-align: center;
-    line-height: 22px;
-    border:  1px solid rgba(43, 187, 173, 0.4);
-    background-color: white;
-    border-radius: 2px;
-    color: black;
-}
-
-.botonGoogle:hover{
-
-    color: black;
-    background-color: #f2f7fe;
-    border:  1px solid #d1e3fa;
-}
-.imagenGoogle{
-    width: 4%;
-    height: auto;
-    margin: auto 10px auto auto;
-}

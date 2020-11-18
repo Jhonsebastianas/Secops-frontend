@@ -3,7 +3,7 @@ import { Form, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Services } from '../../services/services';
 import { PasswordField } from '../../../components/common/inputs/password/PasswordField';
-import { Button, TextInput, Row, Icon } from 'react-materialize';
+import { Button, TextInput, Row } from 'react-materialize';
 import { GoogleLogin } from 'react-google-login';
 
 import { useHistory } from 'react-router-dom';
@@ -123,7 +123,7 @@ export const RegisterUserForm = () => {
                     render={renderProps => (
                         <button className={boton} onClick={renderProps.onClick} disabled={renderProps.disabled}>
                             <img className={imagenGoogle} src={GoogleImage}></img>
-                        Google</button>
+                        Registrate con Google</button>
                     )}
                     onSuccess={respuestaGoogle}
                     onFailure={respuestaGoogle}
