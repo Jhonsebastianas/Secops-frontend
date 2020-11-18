@@ -3,11 +3,11 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Row, TextInput, Button } from 'react-materialize';
 import { Services } from '../../services/services';
-import { useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
 // CSS
-import styles from './Login.module.css';
+import stylesGoogle from '../../../styles/stylesGoogle.module.css';
 
 //Imagen de Google
 import Google from '../../../assets/images/google.svg';
@@ -19,7 +19,7 @@ export function LoginForm() {
 
     const { addToast } = useToasts();
 
-    const {botonGoogle, imagenGoogle} = styles;
+    const {botonGoogle, imagenGoogle} = stylesGoogle;
 
     const history = useHistory();
 
@@ -32,17 +32,12 @@ export function LoginForm() {
     });
 
     const loginUser = values => {
-        Services.login(values, ({ data }) => {
-            const { TOKEN_NAME, USER_NAME } = ConstantsList;
-            const { token } = data;
-            const user = {};
-            user[TOKEN_NAME] = token;
-            localStorage.setItem(USER_NAME, JSON.stringify(user));
-            history.push("home");
-        }, (error) => {
+        Services.login(values, succesLogin, (error) => {
             if (error.response) {
                 const { status } = error.response;
-                if (status === 401) {
+                if (status == 400) {
+                    addToast('Cuenta registrada con Google', { appearance: 'warning' });
+                } else if (status === 401) {
                     addToast('Valida la información por favor', { appearance: 'warning' });
                 } else if (status === 403) {
                     addToast('Aún no has activado tu cuenta', { appearance: 'info' });
@@ -67,6 +62,30 @@ export function LoginForm() {
     const respuestaGoogle = (response) => {
         console.log(response);
         console.log(response.profileObj);
+        Services.loginWithGoogle(response.profileObj, succesLogin, (error) => {
+            if (error.response) {
+                const { status } = error.response;
+                if (status === 401) {
+                    addToast('Valida la información por favor', { appearance: 'warning' });
+                } else if (status === 403) {
+                    addToast('Aún no has activado tu cuenta', { appearance: 'info' });
+                } else {
+                    addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                }
+            } else {
+                addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+            }
+        });
+    }
+
+    const succesLogin = ({ data }) => {
+        const { TOKEN_NAME, USER_NAME } = ConstantsList;
+        const { token, usuario } = data;
+        const user = {};
+        user[TOKEN_NAME] = token;
+        user['usuario'] = usuario;
+        localStorage.setItem(USER_NAME, JSON.stringify(user));
+        history.push("home");
     }
 
     return (
@@ -80,15 +99,15 @@ export function LoginForm() {
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />
-               
+
                 <Button type='submit' className='col s12' disabled={!formik.isValid} >
                     Ingresar
                 </Button>
-                
+
                 <GoogleLogin 
                     clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
                     render={renderProps => (
-                        <button className={botonGoogle} onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                        <button className={botonGoogle}  onClick={renderProps.onClick} disabled={renderProps.disabled}>
                         <img className={imagenGoogle} src={Google}></img>
                         Inicia Sesión con Google</button>
                       )}

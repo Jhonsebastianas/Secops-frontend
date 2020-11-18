@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "set PORT=4200 && react-scripts start"
+    "dev": "set PORT=4200 && npm run start"
   },
   "eslintConfig": {
     "extends": "react-app"

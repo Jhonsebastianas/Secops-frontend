@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { useFormik } from 'formik';
+import React, { useState } from 'react';
+import { Form, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Services } from '../../services/services';
+import { PasswordField } from '../../../components/common/inputs/password/PasswordField';
 import { Button, TextInput, Row, Icon } from 'react-materialize';
+import { GoogleLogin } from 'react-google-login';
 
 import { useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
-const styles = {
-    showPasswordDiv: {
-        right: '0px',
-        cursor: 'pointer',
-        zIndex: '9999',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        MsUserSelect: 'none',
-        UserSelect: 'none',
-    },
-    showPasswordIcon: {
-        cursor: 'pointer',
-        zIndex: '9999',
-    }
-};
+import stylesGoogle from '../../../styles/stylesGoogle.module.css';
+import GoogleImage from '../../../assets/images/google.svg';
+
 
 export const RegisterUserForm = () => {
 
-    const { showPasswordDiv, showPasswordIcon } = styles;
+    const { boton, imagenGoogle } = stylesGoogle;
     const { addToast } = useToasts();
     const history = useHistory();
 
@@ -74,11 +64,36 @@ export const RegisterUserForm = () => {
         onSubmit: registerNewUser,
     });
 
-    /**  Mostramos y no mostramos la clave */
-    const [visiblePassword, setVisiblePassword] = useState('password');
-    const showPassword = () => {
-        const typeInput = (visiblePassword === 'password')? 'text': 'password';
-        setVisiblePassword(typeInput);
+    /**
+     * Sing up with google
+     */
+    const respuestaGoogle = (response) => {
+        console.log(response.profileObj);
+        if (response.profileObj) {
+            const googleUser = {
+                nombres: response.profileObj.givenName,
+                apellidos: response.profileObj.familyName,
+                correo: response.profileObj.email,
+                googleId: response.profileObj.googleId,
+            };
+            Services.newGoogleUser(googleUser, () => {
+                addToast('¡Usuario registrado y verificado con exito!', { appearance: 'success' });
+                history.push("login");
+            }, (error) => {
+                if (error.response) {
+                    const { status } = error.response;
+                    if (status === 409) {
+                        addToast('Cuenta actualmente existente', { appearance: 'info' });
+                    } else if (status === 422) {
+                        addToast('Valida la información, por favor', { appearance: 'warning' });
+                    } else if (status === 500) {
+                        addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                    }
+                } else {
+                    addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                }
+            });
+        }
     }
 
     return (
@@ -96,14 +111,24 @@ export const RegisterUserForm = () => {
                     {...formik.getFieldProps('correo')}
                     children={formik.touched.correo && formik.errors.correo ? (<span className="helper-text red-text">{formik.errors.correo}</span>) : null}
                 />
-                <TextInput label='Clave:' type={visiblePassword} name='clave' id='clave' s={12} m={5} l={5} 
-                    icon={<div style={showPasswordDiv} onClick={showPassword}><Icon className={showPasswordIcon}>visibility</Icon></div>}
+                <PasswordField label='Clave:' name='clave' id='clave' s={12} m={5} l={5}
                     {...formik.getFieldProps('clave')}
                     children={formik.touched.clave && formik.errors.clave ? (<span className="helper-text red-text">{formik.errors.clave}</span>) : null}
                 />
                 <Button type='submit' className='col s12' disabled={!formik.isValid} >
                     Enviar
                 </Button>
+                <GoogleLogin
+                    clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
+                    render={renderProps => (
+                        <button className={boton} onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                            <img className={imagenGoogle} src={GoogleImage}></img>
+                        Google</button>
+                    )}
+                    onSuccess={respuestaGoogle}
+                    onFailure={respuestaGoogle}
+                    cookiePolicy={'single_host_origin'}
+                />
             </Row>
         </form>
     );

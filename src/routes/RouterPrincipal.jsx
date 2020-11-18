@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 // Plugins a hacer routing
 import RegisterUser from '../plugin-registro-usuarios-frontend/views/registro-usuario/RegisterUser';
+import { RecuperarCuenta } from '../plugin-registro-usuarios-frontend/views/recuperar-cuenta/RecuperarCuenta';
+import { RestablecerClave } from '../plugin-registro-usuarios-frontend/views/recuperar-cuenta/restablecer-clave/RestablecerClave';
 import Nosotros from "../views/home-publico/nosotros/Nosotros";
 import { Inicio } from '../views/home-publico/Inicio/Inicio';
 import { Contactanos } from '../views/home-publico/contactanos/Contactanos';
@@ -27,8 +29,14 @@ export default function RouterPrincipal() {
                         <Route exact path="/">
                             <Inicio />
                         </Route>
-                        <Route path="/registro">
+                        <Route exact path="/registro">
                             <RegisterUser />
+                        </Route>
+                        <Route exact path="/registro/recuperar-cuenta">
+                            <RecuperarCuenta />
+                        </Route>
+                        <Route exact path="/registro/restablecer-cuenta/:tokenUsuario">
+                            <RestablecerClave />
                         </Route>
                         <Route path="/contactanos">
                             <Contactanos />

@@ -3,7 +3,9 @@ import firstBackImage from '../../../assets/images/money-bg.jpg';
 import styles from './Inicio.module.css';
 import { TopMenu } from '../menu/TopMenu';
 import { Link } from "react-router-dom";
-import { Row, Col, Container } from 'react-materialize';
+import { Row, Col, Container, Icon } from 'react-materialize';
+import { APP_NAME } from '../../../constants/Constants';
+import { FooterPublico } from '../../../components/common/footer/FooterPublico';
 
 export function Inicio() {
     const { parallaxContainer, parallax } = styles;
@@ -14,9 +16,9 @@ export function Inicio() {
                 <div className="section no-pad-bot">
                     <Container>
                         <br></br><br></br>
-                        <h1 className="header center teal-text text-lighten-2">Home administrator</h1>
+                        <h1 className="header center teal-text text-lighten-2">{APP_NAME}</h1>
                         <Row className='center' >
-                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu inventario.</h5>
+                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu consumo en servicios públicos.</h5>
                         </Row>
                         <Row className='center' >
                             <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Inicia sesión</Link>
@@ -36,18 +38,18 @@ export function Inicio() {
                         <Col s={12} m={4}>
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
-                                <h5 className="center">Speeds up development</h5>
+                                <h5 className="center">Controla tus servicios públicos</h5>
 
-                                <p className="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                                <p className="light">Ten a la mano tu consumo de servicios públicos en tu(s) Hogar(es) siempre que lo necesites, y conoce tu forma de gasto de manera automática o manual, adaptado a tus preferencias.</p>
                             </div>
                         </Col>
 
                         <Col s={12} m={4}>
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">group</i></h2>
-                                <h5 className="center">User Experience Focused</h5>
+                                <h5 className="center">Pensado para reducir tu consumo</h5>
 
-                                <p className="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                                <p className="light">{APP_NAME}, te alerta cuando estás teniendo un desfase en comparación de tu consumo regular, permitiendo detectar aumentos en el consumo de servicios públicos como posibles fugas.</p>
                             </div>
                         </Col>
 
@@ -62,6 +64,7 @@ export function Inicio() {
                     </Row>
                 </div>
             </Container>
+            <FooterPublico />
         </div>
     );
 }

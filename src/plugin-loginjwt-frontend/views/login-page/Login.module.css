@@ -18,7 +18,7 @@ div.cardLogin {
 }
 
 .botonGoogle{
-    width: 100%;
+    width: 100% !important;
     height: 36px;
     margin-top:30px;
     text-align: center;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Navbar, NavItem, Icon  } from 'react-materialize';
+import { APP_NAME } from '../../../constants/Constants';
 
 const style = {
     menuColor: {
@@ -13,7 +14,7 @@ export function TopMenu () {
     return (
         <Navbar style={menuColor}
             alignLinks="right"
-            brand={<Link to='/' className="brand-logo">Home</Link>}
+            brand={<Link to='/' className="brand-logo">{APP_NAME}</Link>}
             centerChildren
             id="mobile-nav"
             menuIcon={<Icon>menu</Icon>}

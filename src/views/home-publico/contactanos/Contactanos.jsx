@@ -5,6 +5,8 @@ import { Row, Col, Card, Preloader } from 'react-materialize';
 // Images
 import backgroundImage from '../../../assets/images/contactanos.svg';
 
+import { FooterPublico } from '../../../components/common/footer/FooterPublico'
+
 export function Contactanos() {
     const { parallaxContainer, cardRegistro, parallax, apodoAlmacen, light, iconPhone, ladoInforamcion, nombreAlmacen, googleMaps, responsiveIframe, informacionContacto } = styles;
     return (
@@ -58,7 +60,7 @@ export function Contactanos() {
                     <Col s={4}></Col>
                 </Row>
             </div>
-
+            <FooterPublico />
         </div >
     );
 

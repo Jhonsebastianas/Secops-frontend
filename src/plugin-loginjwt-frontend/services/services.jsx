@@ -1,15 +1,18 @@
 import axios from 'axios';
-import ConstantsList from '../../constants/Constants';
+import { API_ENDPOINT, TOKEN_NAME } from '../../constants/Constants';
 
 export const Services = {
     login: (user, success, error) => {
-        const { API_ENDPOINT } = ConstantsList;
         axios.post(API_ENDPOINT + 'login/login-sencillo', user)
             .then(success)
             .catch(error);
     },
+    loginWithGoogle: (googleUser, success, error) => {
+        axios.post(API_ENDPOINT + 'login/loginWhitGoogle', googleUser)
+            .then(success)
+            .catch(error);
+    },
     logout: () => {
-        const { TOKEN_NAME } = ConstantsList;
         localStorage.removeItem(TOKEN_NAME);
     },
     getCurrentUser: () => {
