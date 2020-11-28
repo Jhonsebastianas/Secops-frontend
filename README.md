@@ -1,9 +1,16 @@
-# React front
-Este es el front del proyecto
+# React front - SECOPS
+Este es el front del proyecto SECOPS
 
-## Librerias utilizadas
+## 🚀 EJECUCIÓN
+Para ejecutar el proyecto hay dos comandos:
+>npm run dev
+Ejecuta la aplicación en el **puerto 4200**
+>npm run start
+Ejecuta la aplicación en el **puerto 3000**
+
+## 📚 Librerias utilizadas 🧱
 - Framework vista [react-materialize](https://www.npmjs.com/package/react-materialize).
-> npm install materialize-css@next
+> npm install materialize-css@next  
 > npm install react-materialize
 - Validación de formularios [formik](https://formik.org/)
 > npm install formik --save
@@ -18,14 +25,6 @@ Este es el front del proyecto
 - Estados de aplicación [Recoil](https://recoiljs.org/)
 > npm install recoil
 - Integración Login Google [react-google-login](https://www.npmjs.com/package/react-google-login)
-
-## EJECUCIÓN
-Para ejecutar el proyecto hay dos comandos:
-> npm run dev
-o
-> npm run start
-
-El primero nos abre el proyecto en el puerto 4200, mientras que el segundo lo hace en el puerto 3000 que suele usarse para el backend, por ende se **recomienda usar el primero**
 
 ## Pruebas Unitarias
 - Jest [jest.js](https://jestjs.io/)
