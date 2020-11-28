@@ -3,9 +3,9 @@ Este es el front del proyecto SECOPS
 
 ## 🚀 EJECUCIÓN
 Para ejecutar el proyecto hay dos comandos:
->npm run dev
+>npm run dev  
 Ejecuta la aplicación en el **puerto 4200**
->npm run start
+>npm run start  
 Ejecuta la aplicación en el **puerto 3000**
 
 ## 📚 Librerias utilizadas 🧱
