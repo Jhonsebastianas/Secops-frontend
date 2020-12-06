@@ -12,9 +12,12 @@ import Nosotros from "../views/home-publico/nosotros/Nosotros";
 import { Inicio } from '../views/home-publico/Inicio/Inicio';
 import { Contactanos } from '../views/home-publico/contactanos/Contactanos';
 import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
-import { Home } from '../views/home-privado/Home';
 import { Notificacion } from '../views/notificacion/Notificacion';
 import ConstantsList from '../constants/Constants';
+// Rutas privadas
+import { Home } from '../views/home-privado/Home';
+import { RegisterHome } from '../plugin-registro-usuarios-frontend/views/registro-hogar/RegisterHome';
+
 // Toast
 import { ToastProvider } from 'react-toast-notifications';
 
@@ -53,6 +56,9 @@ export default function RouterPrincipal() {
                         {/* Rutas Privadas */}
                         <PrivateRoute path='/home'>
                             <Home />
+                        </PrivateRoute>
+                        <PrivateRoute path='/agregar-un-hogar'>
+                            <RegisterHome />
                         </PrivateRoute>
                     </Switch>
                 </ToastProvider>

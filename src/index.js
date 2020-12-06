@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'materialize-css';
+import './styles/styles.css';
 
 ReactDOM.render(
   <React.StrictMode>

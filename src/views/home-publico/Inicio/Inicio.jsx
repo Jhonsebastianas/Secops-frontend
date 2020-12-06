@@ -58,7 +58,7 @@ export function Inicio() {
                                 <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
                                 <h5 className="center">Easy to work with</h5>
 
-                                <p className="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                                <p className="light">Hemos proporcionado documentación detallada, así como ejemplos de código específicos para ayudar a los nuevos usuarios a comenzar. También estamos siempre abiertos a comentarios y podemos responder cualquier pregunta que un usuario pueda tener sobre Materialise.</p>
                             </div>
                         </Col>
                     </Row>
