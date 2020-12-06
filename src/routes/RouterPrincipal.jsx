@@ -15,6 +15,7 @@ import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
 import { Home } from '../views/home-privado/Home';
 import { Notificacion } from '../views/notificacion/Notificacion';
 import ConstantsList from '../constants/Constants';
+import {EditarCuenta} from '../plugin-registro-usuarios-frontend/views/editar-cuenta/EditarCuenta'
 // Toast
 import { ToastProvider } from 'react-toast-notifications';
 
@@ -49,6 +50,9 @@ export default function RouterPrincipal() {
                         </Route>
                         <Route path="/notificacion/:nombrePlantilla">
                             <Notificacion />
+                        </Route>
+                        <Route path="/home/editar-cuenta">
+                            <EditarCuenta />
                         </Route>
                         {/* Rutas Privadas */}
                         <PrivateRoute path='/home'>
