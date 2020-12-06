@@ -3,8 +3,8 @@ import { TopMenu } from './menu/TopMenu';
 import imgAgua from '../../assets/images/servicios/agua1.png';
 import imgEnergia from '../../assets/images/servicios/energia1.png';
 import imgGas from '../../assets/images/servicios/gas1.png';
-
-import { Button, Container, Collapsible, CollapsibleItem, Icon, Row, Col, Card, CardTitle, CardPanel } from 'react-materialize';
+import { Link } from 'react-router-dom';
+import { Container, Collapsible, CollapsibleItem, Icon, Row, Col, Card, CardTitle, CardPanel } from 'react-materialize';
 
 export function Home() {
     return (
@@ -36,7 +36,7 @@ export function Home() {
                                 <Col m={4}>
                                     <Card
                                         actions={[
-                                            <a key="1" href="#">Ver al detalle</a>
+                                            <a key="1" href="">Ver al detalle</a>
                                         ]}
                                         closeIcon={<Icon>close</Icon>}
                                         header={<CardTitle image={imgAgua} />}
@@ -74,10 +74,11 @@ export function Home() {
                                 </Col>
                             </Row>
                         </Row>
-
-
                     </CollapsibleItem>
                 </Collapsible>
+                <Link to='/agregar-un-hogar' className='botonSecundary'>
+                    Agregar un hogar [+]
+                </Link>
             </Container>
         </div>
     );

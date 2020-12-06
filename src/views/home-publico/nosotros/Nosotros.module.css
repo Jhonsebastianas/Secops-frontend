@@ -1,11 +1,30 @@
 
 .colorH4{
-    color: #3d3e3f;
+    color: #E2E2E2;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    text-align: center;
-    margin: 40px auto 60px auto;
+    margin: 80px auto 40px auto;
+    
 }
 .centrar{
     align-items: center;
     text-align: center;
+} 
+
+.imagenSvg{
+    background: url('../../../assets/images/fondo.svg') no-repeat;
+}
+
+.posicionImagen{
+    margin-top: 80px;
+}
+
+.fondoBoton{
+    background: rgb(52, 122, 52);
+}
+
+.fondoBoton:hover{
+    background: #28A728;
+}
+.fondoBoton:focus{
+    background: #28A728;
 }

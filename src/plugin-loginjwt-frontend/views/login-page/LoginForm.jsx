@@ -19,7 +19,7 @@ export function LoginForm() {
 
     const { addToast } = useToasts();
 
-    const { boton, imagenGoogle } = stylesGoogle;
+    const {boton, imagenGoogle} = stylesGoogle;
 
     const history = useHistory();
 
@@ -104,13 +104,13 @@ export function LoginForm() {
                     Ingresar
                 </Button>
 
-                <GoogleLogin
+                <GoogleLogin 
                     clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
                     render={renderProps => (
-                        <button className={boton} onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                            <img className={imagenGoogle} src={Google}></img>
-                        Ingresa con Google</button>
-                    )}
+                        <button className={boton}  onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                        <img className={imagenGoogle} src={Google}></img>
+                        Inicia Sesión con Google</button>
+                      )}
                     onSuccess={respuestaGoogle}
                     onFailure={respuestaGoogle}
                     cookiePolicy={'single_host_origin'}
