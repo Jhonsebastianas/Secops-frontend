@@ -5,7 +5,8 @@ import { APP_NAME } from '../../../constants/Constants';
 
 const style = {
     menuColor: {
-        backgroundColor: '#26a69a',
+        backgroundColor: 'rgb(122,212,52)',
+
     }
 }
 

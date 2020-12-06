@@ -54,6 +54,7 @@ export default function RouterPrincipal() {
                         <PrivateRoute path='/home'>
                             <Home />
                         </PrivateRoute>
+                        
                     </Switch>
                 </ToastProvider>
             </RecoilRoot>
