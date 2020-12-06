@@ -14,14 +14,11 @@ import { Contactanos } from '../views/home-publico/contactanos/Contactanos';
 import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
 import { Notificacion } from '../views/notificacion/Notificacion';
 import ConstantsList from '../constants/Constants';
-<<<<<<< HEAD
 import {EditarCuenta} from '../plugin-registro-usuarios-frontend/views/editar-cuenta/EditarCuenta'
-=======
 // Rutas privadas
 import { Home } from '../views/home-privado/Home';
 import { RegisterHome } from '../plugin-registro-usuarios-frontend/views/registro-hogar/RegisterHome';
 
->>>>>>> 5cc3e11b0d304fad08dea5340fa9a9c07f490cbf
 // Toast
 import { ToastProvider } from 'react-toast-notifications';
 
