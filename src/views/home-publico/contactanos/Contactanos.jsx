@@ -8,7 +8,8 @@ import backgroundImage from '../../../assets/images/contactanos.svg';
 import { FooterPublico } from '../../../components/common/footer/FooterPublico'
 
 export function Contactanos() {
-    const { parallaxContainer, cardRegistro, parallax, apodoAlmacen, light, iconPhone, ladoInforamcion, nombreAlmacen, googleMaps, responsiveIframe, informacionContacto } = styles;
+    const { parallaxContainer, cardRegistro, parallax, apodoAlmacen, light, iconPhone, ladoInforamcion, nombreAlmacen, googleMaps,
+            responsiveIframe, informacionContacto, textContactanos, titulo, subTitulo } = styles;
     return (
         <div>
             <TopMenu />
@@ -19,13 +20,13 @@ export function Contactanos() {
                         <Card className={cardRegistro}>
                             <div className="card-content">
                                 <div class="row">
-                                    <div className="col s12 m6">
+                                    <div className="col s12 m12 l6 xl6">
                                         <div class="icon-block">
                                             <img height="280dv" className='responsive-img' src={backgroundImage} alt="Unsplashed background img 1" />
                                         </div>
-                                        <h1>Contáctenos</h1>
+                                        <h1 className={textContactanos}>Contáctenos</h1>
                                     </div>
-                                    <Col s={12} m={6} className={ladoInforamcion}>
+                                    <Col s={12} m={12} l={6} xl={6} className={ladoInforamcion}>
                                         <h2 class={apodoAlmacen + " center"}><strong>ALIS</strong></h2>
                                         <h5 className={nombreAlmacen + " center nombre-almacen"}>(Almacen La Isla)</h5>
                                         <h2 className={light + " light-blue-text"}><i className={iconPhone + " material-icons"}>contact_phone</i></h2>

@@ -83,3 +83,37 @@ h1, h2, h3, h4, h5, h6 {
   .informacionContacto{
       margin-bottom: 5% !important;
   }
+
+  @media only screen and  (min-width:200px) and (max-width:332px){
+    .textContactanos{
+        font-size: 2em;
+    }
+
+    .apodoAlmacen{
+        font-size: 0.7em;
+    }
+
+    .nombreAlmacen{
+        font-size: 1em;
+    }
+  }
+
+  @media only screen and  (min-width:333px) and (max-width:421px){
+    .textContactanos{
+        font-size: 3em;
+    }
+
+    .apodoAlmacen{
+        font-size: 3em !important;
+    }
+
+    .nombreAlmacen{
+        font-size: 1.69em;
+    }
+  }
+
+  @media only screen and  (min-width:422px) and (max-width:1080px){
+    .textContactanos{
+        font-size: 4em;
+    }
+  }
