@@ -14,6 +14,7 @@ import { Contactanos } from '../views/home-publico/contactanos/Contactanos';
 import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
 import { Notificacion } from '../views/notificacion/Notificacion';
 import ConstantsList from '../constants/Constants';
+import {EditarCuenta} from '../plugin-registro-usuarios-frontend/views/editar-cuenta/EditarCuenta'
 // Rutas privadas
 import { Home } from '../views/home-privado/Home';
 import { RegisterHome } from '../plugin-registro-usuarios-frontend/views/registro-hogar/RegisterHome';
@@ -52,6 +53,9 @@ export default function RouterPrincipal() {
                         </Route>
                         <Route path="/notificacion/:nombrePlantilla">
                             <Notificacion />
+                        </Route>
+                        <Route path="/home/editar-cuenta">
+                            <EditarCuenta />
                         </Route>
                         {/* Rutas Privadas */}
                         <PrivateRoute path='/home'>
