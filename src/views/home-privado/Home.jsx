@@ -15,7 +15,7 @@ export function Home() {
                 <p>En esta sección encontraras un resumen de tus gastos</p>
                 <Collapsible accordion popout >
                     <CollapsibleItem
-                        expanded
+                        //expanded
                         header="Hogar actual"
                         icon={<Icon>home</Icon>}
                         node="div"
@@ -33,7 +33,7 @@ export function Home() {
                                 <Col m={12}>
                                     Información de tus servicios
                                 </Col>
-                                <Col m={4}>
+                                <Col m={6}>
                                     <Card
                                         actions={[
                                             <a key="1" href="">Ver al detalle</a>
@@ -46,7 +46,7 @@ export function Home() {
                                         AGUA
                                     </Card>
                                 </Col>
-                                <Col m={4}>
+                                <Col m={6}>
                                     <Card
                                         actions={[
                                             <a key="1" href="#">Ver al detalle</a>
@@ -57,19 +57,6 @@ export function Home() {
                                         revealIcon={<Icon>more_vert</Icon>}
                                     >
                                         ENERGÍA
-                                    </Card>
-                                </Col>
-                                <Col m={4}>
-                                    <Card
-                                        actions={[
-                                            <a key="1" href="#">Ver al detalle</a>
-                                        ]}
-                                        closeIcon={<Icon>close</Icon>}
-                                        header={<CardTitle image={imgGas    } />}
-                                        horizontal
-                                        revealIcon={<Icon>more_vert</Icon>}
-                                    >
-                                        GAS
                                     </Card>
                                 </Col>
                             </Row>
