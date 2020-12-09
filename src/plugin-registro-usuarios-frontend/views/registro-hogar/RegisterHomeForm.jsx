@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Col, Row, TextInput, Card, Button, Checkbox, RadioGroup } from 'react-materialize';
+import { Col, Row, TextInput, Card, Button, Checkbox } from 'react-materialize';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
+import { Services } from '../../services/services';
+import loginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils'; 
 
 const validate = values => {
     const errors = {};
@@ -30,6 +32,7 @@ export function RegisterHomeForm() {
 
     const handledChanged = ({ target }) => {
         const { name, value } = target;
+        console.log(`${name}: ${value}`);
         setHogar({ ...hogar, [name]: value });
     }
 
@@ -59,14 +62,29 @@ export function RegisterHomeForm() {
             'servicios': servicios,
             'nombre': nombre,
             'numeroContrato': numeroContrato,
+            'username': loginUtils.getUsernameUser(),
         };
         const error = validate(nuevoHogar);
         setErrors(error);
         if (!Object.keys(error).length) {
-            setHogar(nuevoHogar);
-            // Aquí se debe llamar al web service
-            addToast('Hogar registrado con exito', { appearance: 'success' });
-            history.push("home");
+            nuevoHogar.hogarActual = (hogar.hogarActual === 'Si')? true: false;
+            Services.registerNewHome(nuevoHogar, () => {
+                addToast('Hogar registrado con exito', { appearance: 'success' });
+                history.push("home");
+            }, (error) => {
+                if (error.response) {
+                    const { status } = error.response;
+                    if (status === 409) {
+                        addToast('Hogar actualmente existente', { appearance: 'info' });
+                    } else if (status === 422) {
+                        addToast('Valida la información, por favor', { appearance: 'warning' });
+                    } else if (status === 500) {
+                        addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                    }
+                } else {
+                    addToast('oh no :(, no eres tú somos nosotros, algo a ido mal', { appearance: 'error' });
+                }
+            });
         }
     }
 

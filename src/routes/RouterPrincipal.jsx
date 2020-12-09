@@ -54,15 +54,15 @@ export default function RouterPrincipal() {
                         <Route path="/notificacion/:nombrePlantilla">
                             <Notificacion />
                         </Route>
-                        <Route path="/home/editar-cuenta">
-                            <EditarCuenta />
-                        </Route>
                         {/* Rutas Privadas */}
                         <PrivateRoute path='/home'>
                             <Home />
                         </PrivateRoute>
                         <PrivateRoute path='/agregar-un-hogar'>
                             <RegisterHome />
+                        </PrivateRoute>
+                        <PrivateRoute path="/editar-cuenta">
+                            <EditarCuenta />
                         </PrivateRoute>
                     </Switch>
                 </ToastProvider>
