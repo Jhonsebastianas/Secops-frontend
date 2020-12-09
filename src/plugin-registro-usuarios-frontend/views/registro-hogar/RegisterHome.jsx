@@ -8,7 +8,9 @@ export function RegisterHome() {
         <div>
             <TopMenu />
             <Container>
+                <h6>Agregar un nuevo hogar:</h6>
                 <RegisterHomeForm/>
+                <br></br><br></br><br></br><br></br>
             </Container>
         </div>
     );
