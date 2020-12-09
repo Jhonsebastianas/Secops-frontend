@@ -26,4 +26,11 @@ export const Services = {
             .then(success)
             .catch(error);
     },
+    // Registro de hogares
+    registerNewHome: (newHome, success, error) => {
+        const { API_ENDPOINT } = ConstantsList;
+        axios.post(API_ENDPOINT +'home/create-home', newHome)
+            .then(success)
+            .catch(error);
+    },
 }
