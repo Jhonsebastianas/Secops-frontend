@@ -36,7 +36,7 @@ export function Home() {
                                 <Col m={4}>
                                     <Card
                                         actions={[
-                                            <a key="1" href="">Ver al detalle</a>
+                                            <a key="1" href="/gestionar-consumo">Ver al detalle</a>
                                         ]}
                                         closeIcon={<Icon>close</Icon>}
                                         header={<CardTitle image={imgAgua} />}

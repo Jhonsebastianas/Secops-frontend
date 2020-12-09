@@ -8,7 +8,7 @@ import {
 import RegisterUser from '../plugin-registro-usuarios-frontend/views/registro-usuario/RegisterUser';
 import { RecuperarCuenta } from '../plugin-registro-usuarios-frontend/views/recuperar-cuenta/RecuperarCuenta';
 import { RestablecerClave } from '../plugin-registro-usuarios-frontend/views/recuperar-cuenta/restablecer-clave/RestablecerClave';
-import Nosotros from "../views/home-publico/nosotros/Nosotros";
+import {Nosotros} from "../views/home-publico/nosotros/Nosotros";
 import { Inicio } from '../views/home-publico/Inicio/Inicio';
 import { Contactanos } from '../views/home-publico/contactanos/Contactanos';
 import { Login } from '../plugin-loginjwt-frontend/views/login-page/Login';
@@ -18,6 +18,8 @@ import {EditarCuenta} from '../plugin-registro-usuarios-frontend/views/editar-cu
 // Rutas privadas
 import { Home } from '../views/home-privado/Home';
 import { RegisterHome } from '../plugin-registro-usuarios-frontend/views/registro-hogar/RegisterHome';
+
+import {GestionarConsumo} from '../plugin-registro-usuarios-frontend/views/gestionar-consumo/GestionarConsumo'
 
 // Toast
 import { ToastProvider } from 'react-toast-notifications';
@@ -63,6 +65,9 @@ export default function RouterPrincipal() {
                         </PrivateRoute>
                         <PrivateRoute path='/agregar-un-hogar'>
                             <RegisterHome />
+                        </PrivateRoute>
+                        <PrivateRoute path='/gestionar-consumo'>
+                            <GestionarConsumo/>
                         </PrivateRoute>
                     </Switch>
                 </ToastProvider>
