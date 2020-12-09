@@ -1,10 +1,10 @@
 import React from 'react';
-import { Row, Col, Icon, Button, Container, Modal } from 'react-materialize';
+import { Row, Col, Icon, Button, Container, Table } from 'react-materialize';
 import { TopMenu } from '../../../views/home-privado/menu/TopMenu';
 import styles from '../../views/gestionar-consumo/GestionarConsumo.module.css';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const data = [
     {
@@ -105,22 +105,22 @@ export function GestionarConsumo() {
                         <div className={contenedorMaximum}>
                             <h5>Estadísticas</h5>
                             <Container>
-                                <BarChart
-                                    width={500}
-                                    height={300}
-                                    data={data}
-                                    margin={{
-                                        top: 5, right: 30, left: 20, bottom: 5,
-                                    }}
-                                >
-                                    <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="meses" />
-                                    <YAxis />
-                                    <Tooltip />
-                                    <Legend />
-                                    <Bar dataKey="Diciembre" fill="#28A728" />
-                                    <Bar dataKey="Noviembre" fill="#82ca9d" />
-                                </BarChart>
+                                <ResponsiveContainer width="100%" height={300}>
+
+                                    <BarChart data={data}
+                                        margin={{
+                                            top: 5, right: 30, left: 20, bottom: 5,
+                                        }}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="meses" />
+                                        <YAxis />
+                                        <Tooltip />
+                                        <Legend />
+                                        <Bar dataKey="Diciembre" fill="#28A728" />
+                                        <Bar dataKey="Noviembre" fill="#82ca9d" />
+                                    </BarChart>
+
+                                </ResponsiveContainer>
                             </Container>
                         </div>
                     </Col>
@@ -129,32 +129,67 @@ export function GestionarConsumo() {
                     <Col s={12} m={4} >
                         <div className={contenedorMediano}>
                             <h5>Valor del Consumo</h5>
-                            <div className={contenedorDescripcion}>
-
-                                <p>Servicio por m³</p>
-                                <p>Exceso por m³</p>
-                                <p>Cargo fijo</p>
-                                <p>Subsidio</p>
-                                <p>Servicio</p>
-                                <p>Exceso</p>
-                                <p>Acueducto</p>
-                                <p>Alcantarillado</p>
-
-                                <p><strong>Total</strong></p>
-                            </div>
-                            <div className={contenedorValores}>
-
-                                <p>$ 1.553</p>
-                                <p>$ 1.776</p>
-                                <p>$ 7.485</p>
-                                <p>-$ 13.051</p>
-                                <p>$ 3.7288</p>
-                                <p>$ 17.756</p>
-                                <p>$ 0</p>
-                                <p>$ 0</p>
-
-                                <p><strong>$ 49.488</strong></p>
-                            </div>
+                            
+                            <Container>
+                                <Table className='responsive-table'>
+                                    <tr>
+                                        <td>
+                                            Servicio por m³
+                                        </td>
+                                        <td>
+                                            $ 1.553
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Exceso por m³
+                                        </td>
+                                        <td>
+                                            $ 1.776
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Cargo fijo
+                                        </td>
+                                        <td>
+                                            $ 7.485
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Exceso
+                                        </td>
+                                        <td>
+                                            $ 17.756
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Acueducto
+                                        </td>
+                                        <td>
+                                            $ 0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Alcantarillado
+                                        </td>
+                                        <td>
+                                            $ 0
+                                        </td>
+                                    </tr>                                   
+                                    <tr>
+                                        <td>
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td>
+                                            <strong>$ 49.488</strong>
+                                        </td>
+                                    </tr>
+                                </Table>
+                            </Container>
 
                         </div>
                     </Col>
@@ -169,17 +204,22 @@ export function GestionarConsumo() {
                     </Col>
                 </Row>
                 <div className='fixed-action-btn'>
-                    <Button className={botonAgregar}
-                        onClick={handleClick}
+                    <Button
+                        className={botonAgregar}
+                        node="button"
+                        tooltip="Agregar Consumo"
+                        tooltipOptions={{
+                            position: 'left'
+                        }}
                         floating
                         icon={<Icon>mode_edit</Icon>}
                         large
-                        node="button"
-                        fab="right"
+                        onClick={handleClick}
+
                     />
 
                 </div>
-                
+
             </div>
         </div>
     );

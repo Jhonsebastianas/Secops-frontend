@@ -67,14 +67,8 @@
     background: #28A728;
 }
 
-.contenedorDescripcion{
-    width: 40%;
-   display: inline-block;
+.grafica{
+
+    width: 200px;
+    height: auto;
 }
-
-.contenedorValores{
-
-    width: 40%;
-    display: inline-block;
-}
-
