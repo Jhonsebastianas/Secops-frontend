@@ -26,6 +26,11 @@ Ejecuta la aplicación en el **puerto 3000**
 - Estados de aplicación [Recoil](https://recoiljs.org/)
 > npm install recoil
 - Integración Login Google [react-google-login](https://www.npmjs.com/package/react-google-login)
+- React Circular Progressbar [react-circular-progressbar](https://www.npmjs.com/package/react-circular-progressbar)
+> npm install --save react-circular-progressbar
+- Recharts [recharts.js] (http://recharts.org/en-US)
+> npm install recharts
+
 
 ## Pruebas Unitarias
 - Jest [jest.js](https://jestjs.io/)

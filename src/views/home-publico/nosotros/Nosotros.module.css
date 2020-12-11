@@ -1,6 +1,6 @@
 
 .colorH4{
-    color: #E2E2E2;
+    color: #000000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     margin: 80px auto 40px auto;
     
@@ -18,13 +18,23 @@
     margin-top: 80px;
 }
 
-.fondoBoton{
+.botonEmpezar{
+    border: 1px solid  rgb(52, 122, 52) ;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
     background: rgb(52, 122, 52);
+    padding: 8px;
+    width: auto;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.fondoBoton:hover{
+.botonEmpezar:hover{
+    background: #28A728;
+    border: 1px solid #28A728;
+}
+.botonEmpezar:focus{
     background: #28A728;
 }
-.fondoBoton:focus{
-    background: #28A728;
-}
+

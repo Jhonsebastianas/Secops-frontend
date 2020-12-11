@@ -35,7 +35,7 @@ export function LoginForm() {
         Services.login(values, succesLogin, (error) => {
             if (error.response) {
                 const { status } = error.response;
-                if (status == 400) {
+                if (status === 400) {
                     addToast('Cuenta registrada con Google', { appearance: 'warning' });
                 } else if (status === 401) {
                     addToast('Valida la información por favor', { appearance: 'warning' });
