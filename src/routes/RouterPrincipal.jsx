@@ -66,6 +66,9 @@ export default function RouterPrincipal() {
                         <PrivateRoute path='/gestionar-consumo'>
                             <GestionarConsumo/>
                         </PrivateRoute>
+                        <PrivateRoute path='/editar-cuenta'>
+                            <EditarCuenta/>
+                        </PrivateRoute>
                     </Switch>
                 </ToastProvider>
             </RecoilRoot>

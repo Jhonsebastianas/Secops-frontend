@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import { TopMenu } from '../../../views/home-publico/menu/TopMenu';
+import { TopMenu } from '../../../views/home-privado/menu/TopMenu';
 import { Row, Col, Card, Preloader, TextInput, Icon } from 'react-materialize';
 import styles from './EditarCuenta.module.css';
 import backgroundImage from '../../../assets/images/contactanos.svg';
 import aguaLogoVerde from '../../../assets/images/servicios/aguaLogoVerde.png';
 import energiaLogoVerde from '../../../assets/images/servicios/energiaLogoVerde.png';
 import gasLogoGris from '../../../assets/images/servicios/gasLogoGris.png';
+import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
 // Images
-import { FooterPublico } from '../../../components/common/footer/FooterPublico'
 
 export function EditarCuenta() {
     const { imagen, nombre, logoServicio, fondoBlanco } = styles;
     const [visibilidadFormulario, setVisibilidadformulario] = useState(false);
 
     const esconderFormulario = () => {
-
-        const elemento = document.getElementById("contenidoFormulario");
         const formulario = (visibilidadFormulario) ? false : true;
         setVisibilidadformulario(formulario);
     }
@@ -30,18 +28,18 @@ export function EditarCuenta() {
                         <div className="col s12 m5 l3 xl13">
                             <div className="center">
                                 <img className={imagen} src={backgroundImage}></img>
-                                <p className={nombre}><strong>BREYNER ANDRES TABORDA AGUDELO</strong></p>
-                                <a className="waves-effect waves-light btn" onClick={esconderFormulario}>Editar</a>
+                                <p className={nombre}><strong>{LoginUtils.getFullName()}</strong></p>
+                                <a className="btn" onClick={esconderFormulario}>Editar</a>
                                 <div id="contenedorFormulario">
                                     {visibilidadFormulario && (<div id="contenidoFormulario">
                                         <div>
                                             <div className="input-field col s11">
                                                 <i className="material-icons prefix">account_circle</i>
-                                                <input id="icon_prefix" type="text" className="validate" />
-                                                <label htmlFor="icon_prefix">First Name</label>
+                                                <input id="icon_prefix" type="text" className="validate" value={LoginUtils.getFullName()} />
+                                                <label htmlFor="icon_prefix"></label>
                                             </div>
                                         </div>
-                                        <TextInput label='Hola wey' icon={<Icon>account_circle</Icon>} s={11}/>
+                                        <TextInput label='Apellidos' icon={<Icon>account_circle</Icon>} s={11} placeholder={LoginUtils.getFullName()}/>
                                         {/* <div>
                                             <div className="input-field col s11">
                                                 <i className="material-icons prefix">account_circle</i>
@@ -76,7 +74,6 @@ export function EditarCuenta() {
 
                                             <img className={logoServicio} src={energiaLogoVerde}></img>
                                             <img className={logoServicio} src={aguaLogoVerde}></img>
-                                            <img className={logoServicio} src={gasLogoGris}></img>
 
                                         </td>
                                         <td>
@@ -84,14 +81,23 @@ export function EditarCuenta() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Alan</td>
-                                        <td>Jellybean</td>
-                                        <td>$3.76</td>
+                                        <td>60521503031</td>
+                                        <td>Edificio</td>
+                                        <td>2</td>
+                                        <td>
+
+                                        <img className={logoServicio} src={energiaLogoVerde}></img>
+                                        <img className={logoServicio} src={aguaLogoVerde}></img>
+                                        
+                                        </td>
+                                        <td>
+                                        <i className="material-icons prefix">mode_edit</i>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
+                                        <td>98653201102</td>
+                                        <td>Porteria</td>
+                                        <td>1</td>
                                     </tr>
                                 </tbody>
                             </table>

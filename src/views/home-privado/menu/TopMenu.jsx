@@ -32,7 +32,7 @@ export function TopMenu() {
         <NavItem href="/home">
             Inicio
         </NavItem>
-        <NavItem href="/home/editar-cuenta">
+        <NavItem href="/editar-cuenta">
             Perfil
         </NavItem>
     </Navbar>)

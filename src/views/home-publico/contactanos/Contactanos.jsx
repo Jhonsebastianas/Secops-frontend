@@ -1,7 +1,7 @@
 import React from 'react';
 import { TopMenu } from '../menu/TopMenu';
 import styles from './Contactanos.module.css';
-import animates from '../../../styles/animate.css'
+import animates from '../../../styles/animate.css';
 import { Row, Col, Card, Preloader } from 'react-materialize';
 // Images
 import backgroundImage from '../../../assets/images/contactanos.svg';
@@ -11,7 +11,6 @@ import { FooterPublico } from '../../../components/common/footer/FooterPublico'
 export function Contactanos() {
     const { parallaxContainer, cardRegistro, parallax, apodoAlmacen, light, iconPhone, ladoInforamcion, nombreAlmacen, googleMaps,
             responsiveIframe, informacionContacto, textContactanos, map } = styles;
-    const {animate__animated, animate__backInDown, animate__backInLeft, animate__backInRight} = animates;
     return (
         <div>
             <TopMenu />
