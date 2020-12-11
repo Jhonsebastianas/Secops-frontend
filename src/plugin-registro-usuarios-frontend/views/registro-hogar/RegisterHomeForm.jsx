@@ -226,7 +226,7 @@ export function RegisterHomeForm() {
                         <Checkbox
                             id="servicioAgua"
                             label="Agua"
-                            value="agua"
+                            value="Agua"
                             onChange={handledServicio}
                         />
                     </Col>
