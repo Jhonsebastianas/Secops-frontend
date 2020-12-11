@@ -21,8 +21,10 @@ export const RegisterUserForm = () => {
 
     const registerSchema = Yup.object().shape({
         nombres: Yup.string().trim()
+            .max(60, 'Máximo 60 caracteres')
             .required('Este campo es obligatorio'),
         apellidos: Yup.string().trim()
+            .max(60, 'Máximo 60 caracteres')
             .required('Este campo es obligatorio'),
         correo: Yup.string().trim()
             .required('Este campo es obligatorio')

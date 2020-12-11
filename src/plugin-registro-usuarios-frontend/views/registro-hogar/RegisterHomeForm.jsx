@@ -48,9 +48,11 @@ export function RegisterHomeForm() {
 
     const registerHomeSchema = Yup.object().shape({
         nombre: Yup.string().trim()
-            .max(40, 'Maximo 40 caractéres')
+            .max(40, 'Máximo 40 caracteres')
             .required('Este campo es obligatorio'),
         numeroContrato: Yup.string().trim()
+            .min(6, 'Mínimo 6 números')
+            .max(12, 'Máximo 12 números')
             .matches(/^([0-9])*$/, 'Solo números')
             .required('Este campo es obligatorio'),
     });
