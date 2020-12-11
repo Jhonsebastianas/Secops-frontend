@@ -10,7 +10,7 @@ export function Home() {
             <TopMenu />
             <Container>
                 <h6>Resumen consumo de servicios públicos</h6>
-                <p>En esta sección encontraras un resumen de tus gastos</p>
+                <p>En esta sección encontrarás un resumen de tus gastos</p>
                 <ListaHogares />
                 <Link to='/agregar-un-hogar' className='botonSecundary'>
                     Agregar un hogar [+]

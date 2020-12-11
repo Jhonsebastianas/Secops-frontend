@@ -30,10 +30,8 @@ export function Contactanos() {
                                     <Col s={12} m={12} l={6} xl={6} className={ladoInforamcion + " animate__animated animate__backInRight"}>
                                         <h2 class={apodoAlmacen + " center"}><strong>SECOPS</strong></h2>
                                         <h5 className={nombreAlmacen + " center nombre-almacen"}>(Prototipo para el seguimiento y control de los servicios públicos a través de un aplicativo web)</h5>
-                                        <h2 className={light + " light-blue-text"}><i className={iconPhone + " material-icons"}>contact_phone</i></h2>
-                                        <p className={informacionContacto}>Líneas de atención <br />Teléfono: 8951351<br />Celular: 3009874562</p>
                                         <h2 className={light + " light-blue-text"}><i className={iconPhone + " material-icons"}>email</i></h2>
-                                        <p className="">Redes sociales <br />Gmail: almacenIsla@gmail.com<br /></p>
+                                        <p className="">Canales de comunicación <br />Gmail: jhon_agudelo23191@elpoli.edu.co<br /></p>
                                     </Col>
                                 </div>
                                 <section>

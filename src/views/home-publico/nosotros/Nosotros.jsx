@@ -24,8 +24,7 @@ export function  Nosotros (){
 
             <Container className={centrar}>
               <h4 className={colorH4}>Monitorea tus servicios</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit
-              Deleniti amet ab <strong>necessitatibus!</strong> Libero necessitatibus accusamus</p>
+              <p>Ten a la mano tu consumo de servicios públicos en tu(s) Hogar(es) siempre que lo necesites, y conoce tu forma de gasto de manera automática o manual, adaptado a tus preferencias.</p>
               <a href="/registro" className={botonEmpezar}>Empieza Ahora
               {/*<Icon className={icono}> arrow_forward</Icon>*/}
               </a>

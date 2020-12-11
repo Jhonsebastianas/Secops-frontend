@@ -18,7 +18,7 @@ export function Inicio() {
                         <br></br><br></br>
                         <h1 className="header center teal-text text-lighten-2">{APP_NAME}</h1>
                         <Row className='center' >
-                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu consumo en servicios públicos.</h5>
+                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu consumo en servicios públicos del agua y energía.</h5>
                         </Row>
                         <Row className='center' >
                             <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Inicia sesión</Link>
@@ -35,16 +35,16 @@ export function Inicio() {
             <Container>
                 <div className="section">
                     <Row>
-                        <Col s={12} m={4}>
+                        <Col s={12} m={6}>
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
-                                <h5 className="center">Controla tus servicios públicos</h5>
+                                <h5 className="center">Controla tus servicios públicos (agua y energía)</h5>
 
                                 <p className="light">Ten a la mano tu consumo de servicios públicos en tu(s) Hogar(es) siempre que lo necesites, y conoce tu forma de gasto de manera automática o manual, adaptado a tus preferencias.</p>
                             </div>
                         </Col>
 
-                        <Col s={12} m={4}>
+                        <Col s={12} m={6}>
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">group</i></h2>
                                 <h5 className="center">Pensado para reducir tu consumo</h5>
@@ -53,14 +53,14 @@ export function Inicio() {
                             </div>
                         </Col>
 
-                        <Col s={12} m={4}>
+                        {/* <Col s={12} m={4}>
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
                                 <h5 className="center">Easy to work with</h5>
 
                                 <p className="light">Hemos proporcionado documentación detallada, así como ejemplos de código específicos para ayudar a los nuevos usuarios a comenzar. También estamos siempre abiertos a comentarios y podemos responder cualquier pregunta que un usuario pueda tener sobre Materialise.</p>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </div>
             </Container>
