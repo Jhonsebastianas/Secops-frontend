@@ -11,12 +11,12 @@ import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
 
 export function EditarCuenta() {
     const { imagen, nombre, logoServicio, fondoBlanco } = styles;
-    const [visibilidadFormulario, setVisibilidadformulario] = useState(false);
+    // const [visibilidadFormulario, setVisibilidadformulario] = useState(false);
 
-    const esconderFormulario = () => {
-        const formulario = (visibilidadFormulario) ? false : true;
-        setVisibilidadformulario(formulario);
-    }
+    // const esconderFormulario = () => {
+    //     const formulario = (visibilidadFormulario) ? false : true;
+    //     setVisibilidadformulario(formulario);
+    // }
 
     return (
 
@@ -29,9 +29,9 @@ export function EditarCuenta() {
                             <div className="center">
                                 <img className={imagen} src={backgroundImage}></img>
                                 <p className={nombre}><strong>{LoginUtils.getFullName()}</strong></p>
-                                <a className="btn" onClick={esconderFormulario}>Editar</a>
+                                {/* <a className="btn" onClick={esconderFormulario}>Editar</a> */}
                                 <div id="contenedorFormulario">
-                                    {visibilidadFormulario && (<div id="contenidoFormulario">
+                                    {/* {visibilidadFormulario && (<div id="contenidoFormulario">
                                         <div>
                                             <div className="input-field col s11">
                                                 <i className="material-icons prefix">account_circle</i>
@@ -40,14 +40,7 @@ export function EditarCuenta() {
                                             </div>
                                         </div>
                                         <TextInput label='Apellidos' icon={<Icon>account_circle</Icon>} s={11} placeholder={LoginUtils.getFullName()}/>
-                                        {/* <div>
-                                            <div className="input-field col s11">
-                                                <i className="material-icons prefix">account_circle</i>
-                                                <input id="icon_prefix" type="text" className="validate" />
-                                                <label htmlFor="icon_prefix">Direccion</label>
-                                            </div>
-                                        </div> */}
-                                    </div>)}
+                                    </div>)} */}
                                 </div>
                             </div>
                         </div>

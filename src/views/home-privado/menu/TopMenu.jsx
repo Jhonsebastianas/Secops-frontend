@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Navbar, NavItem, Icon } from 'react-materialize';
 import { APP_NAME } from '../../../constants/Constants';
+import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
+import { useToasts } from 'react-toast-notifications';
 
 const style = {
     menuColor: {
@@ -11,6 +13,16 @@ const style = {
 
 export function TopMenu() {
     const { menuColor } = style;
+
+    const { addToast } = useToasts();
+    const history = useHistory();
+
+    const singOff = () => {
+        LoginUtils.SignOff();
+        addToast('Sesión cerrada con éxito', { appearance: 'success', autoDismiss: true, });
+        history.push("/");
+    }
+
     return (<Navbar style={menuColor}
         alignLinks="right"
         brand={<Link to='/home' className="brand-logo">{APP_NAME}</Link>}
@@ -34,6 +46,9 @@ export function TopMenu() {
         </NavItem>
         <NavItem href="/editar-cuenta">
             Perfil
+        </NavItem>
+        <NavItem onClick={singOff}>
+            Cerrar sesión
         </NavItem>
     </Navbar>)
 }

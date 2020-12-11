@@ -71,7 +71,7 @@ export function RegisterHomeForm() {
         if (!Object.keys(error).length) {
             nuevoHogar.hogarActual = (hogar.hogarActual === 'Si')? true: false;
             Services.registerNewHome(nuevoHogar, () => {
-                addToast('Hogar registrado con exito', { appearance: 'success' });
+                addToast('Hogar registrado con exito', { appearance: 'success', autoDismiss: true });
                 history.push("home");
             }, (error) => {
                 if (error.response) {

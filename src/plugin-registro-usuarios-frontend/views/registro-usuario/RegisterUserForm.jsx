@@ -79,7 +79,7 @@ export const RegisterUserForm = () => {
                 googleId: response.profileObj.googleId,
             };
             Services.newGoogleUser(googleUser, () => {
-                addToast('¡Usuario registrado y verificado con exito!', { appearance: 'success' });
+                addToast('¡Usuario registrado y verificado con exito!', { appearance: 'success', autoDismiss: true });
                 history.push("login");
             }, (error) => {
                 if (error.response) {
