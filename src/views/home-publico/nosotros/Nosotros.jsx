@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './Nosotros.module.css';
-import { Row, Col, Container, Button, Icon } from 'react-materialize';
+import { Row, Col, Container, Icon } from 'react-materialize';
 
 //Imagenes
 import nosotros from '../../../assets/images/nosotros.svg';
@@ -9,11 +9,10 @@ import nosotros from '../../../assets/images/nosotros.svg';
 import { TopMenu } from '../menu/TopMenu';
 import { FooterPublico } from '../../../components/common/footer/FooterPublico';
 
-export default class Nosotros extends Component {
+export function  Nosotros (){
 
-  render() {
-
-    const { centrar, colorH4, imagenSvg, posicionImagen, fondoBoton } = styles;
+  
+    const { centrar, colorH4, imagenSvg, posicionImagen, botonEmpezar, icono } = styles;
 
     return (
       <div>
@@ -27,10 +26,9 @@ export default class Nosotros extends Component {
               <h4 className={colorH4}>Monitorea tus servicios</h4>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit
               Deleniti amet ab <strong>necessitatibus!</strong> Libero necessitatibus accusamus</p>
-              <Button  node="button" waves="light" className={fondoBoton}>
-                Empieza ahora
-                <Icon right>arrow_forward</Icon>
-              </Button>
+              <a href="/registro" className={botonEmpezar}>Empieza Ahora
+              {/*<Icon className={icono}> arrow_forward</Icon>*/}
+              </a>
             </Container>
           </Col>
           <Col s={12} m={4} className={posicionImagen}>
@@ -41,6 +39,6 @@ export default class Nosotros extends Component {
         <FooterPublico />
       </div>
 
-    );
-  }
+    )
+  
 }
