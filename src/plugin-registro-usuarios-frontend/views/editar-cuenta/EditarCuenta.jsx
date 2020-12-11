@@ -5,7 +5,6 @@ import styles from './EditarCuenta.module.css';
 import backgroundImage from '../../../assets/images/contactanos.svg';
 import aguaLogoVerde from '../../../assets/images/servicios/aguaLogoVerde.png';
 import energiaLogoVerde from '../../../assets/images/servicios/energiaLogoVerde.png';
-import gasLogoGris from '../../../assets/images/servicios/gasLogoGris.png';
 import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
 // Images
 

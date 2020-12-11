@@ -107,7 +107,7 @@ export function RegisterHomeForm() {
                     {...formik.getFieldProps('nombre')} placeholder='Casa abuela'
                     children={formik.touched.nombre && formik.errors.nombre ? (<span className="helper-text red-text">{formik.errors.nombre}</span>) : null}
                 />
-                <TextInput label='# Contrato: *' id='numeroContrato' m={4} s={12}
+                <TextInput label='# Contrato: *' id='numeroContrato' m={4} s={12} autocomplete="off"
                     {...formik.getFieldProps('numeroContrato')} placeholder='0000000'
                     children={formik.touched.numeroContrato && formik.errors.numeroContrato ? (<span className="helper-text red-text">{formik.errors.numeroContrato}</span>) : null}
                 />
