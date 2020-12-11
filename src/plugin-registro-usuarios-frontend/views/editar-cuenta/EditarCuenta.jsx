@@ -27,10 +27,10 @@ export function EditarCuenta() {
             <div className="row">
                 <form method="post" id="perfil">
                     <div className={"col s12 " + fondoBlanco} >
-                        <div className="col s12 m5 l5 xl5">
+                        <div className="col s12 m5 l3 xl13">
                             <div className="center">
                                 <img className={imagen} src={backgroundImage}></img>
-                                <p className={nombre}><strong>Jhon Sebastian</strong></p>
+                                <p className={nombre}><strong>BREYNER ANDRES TABORDA AGUDELO</strong></p>
                                 <a className="waves-effect waves-light btn" onClick={esconderFormulario}>Editar</a>
                                 <div id="contenedorFormulario">
                                     {visibilidadFormulario && (<div id="contenidoFormulario">
@@ -53,7 +53,7 @@ export function EditarCuenta() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col s12 m7 l7 xl7">
+                        <div className="col s12 m7 l9 xl9">
 
 
                             <table className="centered">

@@ -96,6 +96,10 @@ h1, h2, h3, h4, h5, h6 {
     .nombreAlmacen{
         font-size: 1em;
     }
+    
+    .map{
+        margin-top:105% !important;
+    }
   }
 
   @media only screen and  (min-width:333px) and (max-width:421px){
@@ -110,10 +114,26 @@ h1, h2, h3, h4, h5, h6 {
     .nombreAlmacen{
         font-size: 1.69em;
     }
+
+    .map{
+        margin-top:105% !important;
+    }
   }
 
-  @media only screen and  (min-width:422px) and (max-width:1080px){
+  @media only screen and  (min-width:894px) and (max-width:1050px){
+    .textContactanos{
+        margin-top: 35% !important;
+    }
+
     .textContactanos{
         font-size: 4em;
     }
+
+  }
+
+  @media only screen and  (min-width:1051px) and (max-width:1080px){
+    .textContactanos{
+        font-size: 4em;
+    }
+
   }
