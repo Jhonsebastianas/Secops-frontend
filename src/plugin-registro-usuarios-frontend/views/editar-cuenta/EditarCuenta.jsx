@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TopMenu } from '../../../views/home-privado/menu/TopMenu';
-import { Row, Col, Card, Preloader, TextInput, Icon } from 'react-materialize';
 import styles from './EditarCuenta.module.css';
 import backgroundImage from '../../../assets/images/contactanos.svg';
 import aguaLogoVerde from '../../../assets/images/servicios/aguaLogoVerde.png';
 import energiaLogoVerde from '../../../assets/images/servicios/energiaLogoVerde.png';
 import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
-// Images
+// Hogares
+import imgAgua from '../../../assets/images/servicios/agua1.png';
+import imgEnergia from '../../../assets/images/servicios/energia1.png';
+import { Card, CardPanel, CardTitle, Col, Collapsible, CollapsibleItem, Collection, Icon, Row, Table } from 'react-materialize';
+import { Services } from '../../../plugin-hogares-frontend/services/hogar.services';
 
 export function EditarCuenta() {
     const { imagen, nombre, logoServicio, fondoBlanco } = styles;
@@ -16,37 +19,57 @@ export function EditarCuenta() {
     //     const formulario = (visibilidadFormulario) ? false : true;
     //     setVisibilidadformulario(formulario);
     // }
+    const [listaHogares, setListaHogares] = useState([]);
+    const [editarHogar, setEditarHogar] = useState(null);
+
+    useEffect(() => {
+        let mounted = true;
+        console.log(mounted)
+        Services.getHogaresByUsername(LoginUtils.getUsernameUser(), ({ data }) => {
+            if (mounted) {
+                setListaHogares(data);
+            }
+        }, (error) => { });
+        return () => mounted = false;
+    }, [])
+
+    function getHomeByNumeroContrato(numeroContrato){
+        Services.getHogarByNumeroContrato(numeroContrato, ({ data }) => {
+            console.log(data);
+            setEditarHogar(data);
+        }, (error) => { });    
+    }
 
     return (
 
         <div>
             <TopMenu />
-            <div className="row">
+            <Row>
                 <form method="post" id="perfil">
-                    <div className={"col s12 " + fondoBlanco} >
-                        <div className="col s12 m5 l3 xl13">
-                            <div className="center">
+                    <Col s={12} className={fondoBlanco} >
+                        <Col s={12} m={5} l={3} xl={13}>
+                            <Col className="center">
                                 <img className={imagen} src={backgroundImage}></img>
                                 <p className={nombre}><strong>{LoginUtils.getFullName()}</strong></p>
                                 {/* <a className="btn" onClick={esconderFormulario}>Editar</a> */}
-                                <div id="contenedorFormulario">
+                                <Col id="contenedorFormulario">
                                     {/* {visibilidadFormulario && (<div id="contenidoFormulario">
-                                        <div>
-                                            <div className="input-field col s11">
-                                                <i className="material-icons prefix">account_circle</i>
-                                                <input id="icon_prefix" type="text" className="validate" value={LoginUtils.getFullName()} />
-                                                <label htmlFor="icon_prefix"></label>
-                                            </div>
-                                        </div>
-                                        <TextInput label='Apellidos' icon={<Icon>account_circle</Icon>} s={11} placeholder={LoginUtils.getFullName()}/>
-                                    </div>)} */}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col s12 m7 l9 xl9">
+                                                <div>
+                                                    <div className="input-field col s11">
+                                                        <i className="material-icons prefix">account_circle</i>
+                                                        <input id="icon_prefix" type="text" className="validate" value={LoginUtils.getFullName()} />
+                                                        <label htmlFor="icon_prefix"></label>
+                                                    </div>
+                                                </div>
+                                                <TextInput label='Apellidos' icon={<Icon>account_circle</Icon>} s={11} placeholder={LoginUtils.getFullName()}/>
+                                            </div>)} */}
+                                </Col>
+                            </Col>
+                        </Col>
+                        <Col s={12} m={7} l={9} xl={9}>
 
 
-                            <table className="centered">
+                            <Table className="centered">
                                 <thead>
                                     <tr>
                                         <th>#Contrato</th>
@@ -58,51 +81,39 @@ export function EditarCuenta() {
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td>056511313321</td>
-                                        <td>MyCasa</td>
-                                        <td>3</td>
-                                        <td>
+                                    {listaHogares.map(hogar => {
+                                        return (
+                                            <tr>
+                                                <td>{hogar.numeroContrato}</td>
+                                                <td>{hogar.nombre}</td>
+                                                <td>{hogar.estrato}</td>
+                                                <td>
+                                                    {hogar.servicios.map(servicio => {
+                                                        return (
+                                                            <img className={logoServicio} src={(servicio === 'Agua') ? energiaLogoVerde : aguaLogoVerde}></img>
 
-                                            <img className={logoServicio} src={energiaLogoVerde}></img>
-                                            <img className={logoServicio} src={aguaLogoVerde}></img>
+                                                        );
+                                                    })}
 
-                                        </td>
-                                        <td>
-                                            <i className="material-icons prefix">mode_edit</i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>60521503031</td>
-                                        <td>Edificio</td>
-                                        <td>2</td>
-                                        <td>
 
-                                        <img className={logoServicio} src={energiaLogoVerde}></img>
-                                        <img className={logoServicio} src={aguaLogoVerde}></img>
-                                        
-                                        </td>
-                                        <td>
-                                        <i className="material-icons prefix">mode_edit</i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>98653201102</td>
-                                        <td>Porteria</td>
-                                        <td>1</td>
-                                    </tr>
+                                                </td>
+                                                <td>
+                                                    <i className="material-icons prefix" onClick={()=>getHomeByNumeroContrato(hogar.numeroContrato)}>mode_edit</i>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
-                            </table>
-                        </div>
-                    </div>
+                            </Table>
+                        </Col>
+                    </Col>
 
                 </form>
                 {/* <FooterPublico /> */}
-            </div>
-
+            </Row>
         </div>
     );
-    
+
 };
 
 
