@@ -4,8 +4,12 @@ import imgEnergia from '../../../assets/images/servicios/energia1.png';
 import { Card, CardPanel, CardTitle, Col, Collapsible, CollapsibleItem, Icon, Row } from 'react-materialize';
 import { Services } from '../../services/hogar.services';
 import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
+import Styles from './ListaHogares.module.css';
+// import { useToasts } from 'react-toast-notifications';
 
 export function ListaHogares() {
+
+    // const { addToast } = useToasts();
 
     const [listaHogares, setListaHogares] = useState([]);
 
@@ -16,7 +20,9 @@ export function ListaHogares() {
             if (mounted) {
                 setListaHogares(data);
             }
-        }, (error) => { });
+        }, (error) => { 
+            
+         });
         return () => mounted = false;
     }, [])
 
@@ -26,7 +32,7 @@ export function ListaHogares() {
 
                 {listaHogares.map(hogar => {
                     return (
-                        <CollapsibleItem
+                        <CollapsibleItem className={`${Styles.itemHogar}`}
                             //expanded
                             header={hogar.nombre}
                             icon={<Icon>{(hogar.tipoHogar === 'casa')? 'home': 'apartment'}</Icon>}
@@ -35,7 +41,7 @@ export function ListaHogares() {
                             <Col m={12}>
                                 Información de tu hogar: {hogar.nombre}
                             </Col>
-                            <Row>
+                            <Row className='animate__animated animate__zoomIn'>
                                 <CardPanel className="">
                                     <span className="black-text">
                                         Contrato: {hogar.numeroContrato} | Tipo hogar: {hogar.tipoHogar} | Estrato: {hogar.estrato}

@@ -18,9 +18,14 @@ export function Notificacion() {
         <div className={padre}>
             <div className="valign-wrapper center-align">
                 <Row>
-                    <Col m={12}>
-                        <img width="200px" src={require(`../../assets/images/alerts/${nombreImagen}`)} alt="mailSend" className="responsive-img" />
-                    </Col>
+                    <Row>
+                        <Col s={1}></Col>
+                        <Col s={10} m={12}>
+                            <img width="200px" src={require(`../../assets/images/alerts/${nombreImagen}`)} alt="mailSend" className="responsive-img" />
+                        </Col>
+                        <Col s={1}></Col>
+                    </Row>
+
                     <Col className="center-align" m={12}>
                         <h3>{titulo}</h3>
                     </Col>
@@ -31,9 +36,13 @@ export function Notificacion() {
                         </Col>
                         <Col m={3}></Col>
                     </Col>
-                    <Col className="center-align" m={12}>
-                        <a className="btn waves-effect waves-light btn-secundario" href={rutaBoton}>{tituloBoton}</a>
-                    </Col>
+                    <Row>
+                        <Col s={1}></Col>
+                        <Col className="center-align" m={12} s={10} >
+                            <a className="btn waves-effect waves-light btn-secundario" href={rutaBoton}>{tituloBoton}</a>
+                        </Col>
+                        <Col s={1}></Col>
+                    </Row>
                 </Row>
             </div>
         </div>

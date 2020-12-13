@@ -1,10 +1,13 @@
 import React from 'react';
 import { TopMenu } from './menu/TopMenu';
-import { Link } from 'react-router-dom';
-import { Container } from 'react-materialize';
+import { Button, Col, Container } from 'react-materialize';
 import { ListaHogares } from '../../plugin-hogares-frontend/views/homes-list/ListaHogares';
+import { useHistory } from 'react-router-dom';
 
 export function Home() {
+
+    const history = useHistory();
+
     return (
         <div>
             <TopMenu />
@@ -12,9 +15,12 @@ export function Home() {
                 <h6>Resumen consumo de servicios públicos</h6>
                 <p>En esta sección encontrarás un resumen de tus gastos</p>
                 <ListaHogares />
-                <Link to='/agregar-un-hogar' className='botonSecundary'>
-                    Agregar un hogar [+]
-                </Link>
+                <Col s={12} m={12}>
+                    <Button className='botonSecundary' onClick={() => history.push("agregar-un-hogar")}>
+                        Agregar un hogar [+]
+                    </Button>
+                </Col>
+
             </Container>
         </div>
     );

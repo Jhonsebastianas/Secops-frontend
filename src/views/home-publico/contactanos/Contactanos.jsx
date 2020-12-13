@@ -1,7 +1,6 @@
 import React from 'react';
 import { TopMenu } from '../menu/TopMenu';
 import styles from './Contactanos.module.css';
-import animates from '../../../styles/animate.css';
 import { Row, Col, Card, Preloader } from 'react-materialize';
 // Images
 import backgroundImage from '../../../assets/images/contactanos.svg';
