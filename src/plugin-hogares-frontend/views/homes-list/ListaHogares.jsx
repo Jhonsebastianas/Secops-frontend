@@ -53,7 +53,7 @@ export function ListaHogares() {
                                                         <a key="1" href="">Ver al detalle</a>
                                                     ]}
                                                     closeIcon={<Icon>close</Icon>}
-                                                    header={<CardTitle image={(servicio === 'Agua')? imgAgua: imgEnergia} />}
+                                                    header={<CardTitle image={(servicio === 'Agua')? imgAgua:imgEnergia} />}
                                                     horizontal
                                                     revealIcon={<Icon>more_vert</Icon>}
                                                 >
