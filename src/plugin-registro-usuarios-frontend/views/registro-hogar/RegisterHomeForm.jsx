@@ -112,7 +112,7 @@ export function RegisterHomeForm() {
                     children={formik.touched.numeroContrato && formik.errors.numeroContrato ? (<span className="helper-text red-text">{formik.errors.numeroContrato}</span>) : null}
                 />
                 <Col m={3}>
-                    <p>¿Este es su hogar actual?</p>
+                    <p>¿Este es el hogar en el que actualmente vive?</p>
                     <Col m={6}>
                         <p>
                             <label>

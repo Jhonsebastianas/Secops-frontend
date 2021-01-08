@@ -1,0 +1,27 @@
+.botonOutline{
+    background-color: white !important;
+    border:  3px dotted rgba(148, 209, 102, 0.4);
+    border-radius: 2px;
+    color:  rgb(122, 212, 52);
+    font-weight: bold;
+    height: 36px;
+    line-height: 20px;
+    margin-top:15px;
+    overflow: visible;
+    text-align: center;
+    transition: all .15s linear;
+    width: 100%;
+}
+
+.botonOutline:hover{
+    background-color: rgba(122, 212, 52, 0.7) !important;
+    border:  2px solid rgba(148, 209, 102, 0.4);
+    color: white;
+    cursor: pointer;
+}
+
+.botonOutline:focus{
+    background-color: #f2f7fe;
+    border:  1px solid #d1e3fa;
+    color: black;
+}

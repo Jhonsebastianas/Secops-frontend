@@ -18,15 +18,20 @@ export default class RegisterUser extends Component {
                     <Col s={12} m={8} l={8}>
                         <Card className={cardRegistro}>
                             <div className="card-content">
-                                <h6>INFORMACIÓN REGISTRO:</h6>
+                                <h6>Crea tu cuenta</h6>
                                 <RegisterUserForm />
                                 <div className="center-align">
                                     <Link to='registro/recuperar-cuenta'>¿Olvidaste tu contraseña?</Link>
                                 </div>
+                                {/* <div className="condiciones">
+                                    <p>
+                                        Si continúa creando una cuenta, acepta nuestra Política de privacidad y términos y condiciones
+                                    </p>
+                                </div> */}
                                 <Link to="/">VOLVER</Link>
                             </div>
                         </Card>
-                        <div className={"parallax "+ parallax}>
+                        <div className={"parallax " + parallax}>
                             <img height="100dv" src={backgroundImage} alt="Unsplashed background img 1" />
                         </div>
                     </Col>

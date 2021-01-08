@@ -7,7 +7,7 @@ import { useToasts } from 'react-toast-notifications';
 
 const style = {
     menuColor: {
-        backgroundColor: '#26a69a',
+        backgroundColor: 'rgb(122, 212, 52)',
     }
 }
 

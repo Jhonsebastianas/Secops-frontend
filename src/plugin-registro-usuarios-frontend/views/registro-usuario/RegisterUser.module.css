@@ -3,7 +3,6 @@ div.cardRegistro {
 }
 
 .parallaxContainer {
-    height: 100%;
     width: 100% ;
     background: no-repeat fixed center;
     -webkit-background-size: cover;
@@ -20,4 +19,12 @@ div.cardRegistro {
 div.showPasswordIcon {
     right: 0px !important;
     cursor: pointer;
+}
+
+div.condiciones{
+    text-align: center;
+}
+
+div.condiciones p{
+    font-size: small;
 }

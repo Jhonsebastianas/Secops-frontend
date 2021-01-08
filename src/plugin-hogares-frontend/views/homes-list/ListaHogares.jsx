@@ -41,7 +41,7 @@ export function ListaHogares() {
                             <Col m={12}>
                                 Información de tu hogar: {hogar.nombre}
                             </Col>
-                            <Row className='animate__animated animate__zoomIn'>
+                            <Row>
                                 <CardPanel className="">
                                     <span className="black-text">
                                         Contrato: {hogar.numeroContrato} | Tipo hogar: {hogar.tipoHogar} | Estrato: {hogar.estrato}
