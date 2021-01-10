@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // CSS
 import styles from './RegisterUser.module.css';
 // Images
-import backgroundImage from '../../../assets/images/money-bg.jpg';
+import backgroundImage from '../../../assets/images/ahorro_1.webp';
 // Others
 import { Row, Col, Card } from 'react-materialize';
 import { RegisterUserForm } from './RegisterUserForm';

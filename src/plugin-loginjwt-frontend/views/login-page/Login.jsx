@@ -3,7 +3,7 @@ import { LoginForm } from './LoginForm';
 // CSS
 import styles from './Login.module.css';
 // Images
-import backgroundImage from '../../../assets/images/money-bg.jpg';
+import backgroundImage from '../../../assets/images/JP_0.webp';
 // Materialize
 import { Row, Col, Card  } from 'react-materialize';
 import { Link } from 'react-router-dom';
