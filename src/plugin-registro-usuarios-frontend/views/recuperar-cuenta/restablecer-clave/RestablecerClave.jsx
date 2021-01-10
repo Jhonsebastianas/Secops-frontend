@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../RecuperarCuenta.module.css';
 // Images
-import backgroundImage from '../../../../assets/images/resetPassword.jpg';
+import backgroundImage from '../../../../assets/images/JP_8.webp';
 // Others
 import { Row, Col, Card } from 'react-materialize';
 import { Link } from "react-router-dom";
