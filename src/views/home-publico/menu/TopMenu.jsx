@@ -5,20 +5,22 @@ import { APP_NAME } from '../../../constants/Constants';
 
 const style = {
     menuColor: {
-        backgroundColor: 'rgb(122,212,52)',
-
+        backgroundColor: 'white',
+    },
+    colorNegro: {
+        color: 'black'
     }
 }
 
 export function TopMenu () {
-    const { menuColor } = style;
+    const { menuColor, colorNegro } = style;
     return (
         <Navbar style={menuColor}
             alignLinks="right"
             brand={<Link to='/' className="brand-logo">{APP_NAME}</Link>}
             centerChildren
             id="mobile-nav"
-            menuIcon={<Icon>menu</Icon>}
+            menuIcon={<Icon style={colorNegro}>menu</Icon>}
             options={{
                 draggable: true,
                 edge: 'left',
@@ -31,13 +33,13 @@ export function TopMenu () {
                 preventScrolling: true
             }}
         >
-            <NavItem href="/">
+            <NavItem href="/" style={colorNegro}>
                 Inicio
             </NavItem>
-            <NavItem href="/nosotros">
+            <NavItem href="/nosotros" style={colorNegro}>
                 Nosotros
             </NavItem>
-            <NavItem href="/contactanos">
+            <NavItem href="/contactanos" style={colorNegro}>
                 Contáctanos
             </NavItem>
         </Navbar>

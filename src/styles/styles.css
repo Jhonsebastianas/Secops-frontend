@@ -1,12 +1,19 @@
 /* H1 */
-.teal-text.text-lighten-2 {
-    color: rgb(122, 212, 52) !important;
+/* .teal-text.text-lighten-2 {
+    color: #00516C !important;
 }
 /* Botones */
 .teal.lighten-1 {
-    background-color: #388E3C !important;
+    background-color: #00aae4 !important;
+    border-radius: 50px;
 }
 
 button.btn {
-    background-color: #388E3C !important;
+    background-color: #00aae4 !important;
+    border-radius: 50px;
+}
+
+/*Color logo menú*/
+a.brand-logo {
+    color: black;
 }

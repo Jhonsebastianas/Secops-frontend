@@ -8,12 +8,15 @@ import { MenuLateral } from './MenuLateral';
 
 const style = {
     menuColor: {
-        backgroundColor: 'rgb(122, 212, 52)',
+        backgroundColor: 'white',
+    },
+    colorNegro: {
+        color: 'black',
     }
 }
 
 export function TopMenu() {
-    const { menuColor } = style;
+    const { menuColor, colorNegro } = style;
 
     const { addToast } = useToasts();
     const history = useHistory();
@@ -30,7 +33,7 @@ export function TopMenu() {
             brand={<Link to='/home' className="brand-logo">{APP_NAME}</Link>}
             centerChildren
             id="mobile-nav"
-            menuIcon={<Icon>menu</Icon>}
+            menuIcon={<Icon style={colorNegro}>menu</Icon>}
             options={{
                 draggable: true,
                 edge: 'left',
@@ -44,13 +47,13 @@ export function TopMenu() {
             }}
             sidenav={<MenuLateral />}
         >
-            <NavItem href="/home">
+            <NavItem href="/home" style={colorNegro}>
                 Inicio
         </NavItem>
-            <NavItem href="/editar-cuenta">
+            <NavItem href="/editar-cuenta" style={colorNegro}>
                 Perfil
         </NavItem>
-            <NavItem onClick={singOff}>
+            <NavItem onClick={singOff} style={colorNegro}>
                 Cerrar sesión
         </NavItem>
         </Navbar>

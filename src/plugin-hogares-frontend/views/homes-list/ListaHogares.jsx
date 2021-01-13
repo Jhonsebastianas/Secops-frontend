@@ -20,22 +20,21 @@ export function ListaHogares() {
             if (mounted) {
                 setListaHogares(data);
             }
-        }, (error) => { 
-            
-         });
+        }, (error) => {
+
+        });
         return () => mounted = false;
     }, [])
 
     return (
         <div>
             <Collapsible accordion popout >
-
                 {listaHogares.map(hogar => {
                     return (
                         <CollapsibleItem className={`${Styles.itemHogar}`}
                             //expanded
                             header={hogar.nombre}
-                            icon={<Icon>{(hogar.tipoHogar === 'casa')? 'home': 'apartment'}</Icon>}
+                            icon={<Icon>{(hogar.tipoHogar === 'casa') ? 'home' : 'apartment'}</Icon>}
                             node="div"
                         >
                             <Col m={12}>
@@ -59,7 +58,7 @@ export function ListaHogares() {
                                                         <a key="1" href="">Ver al detalle</a>
                                                     ]}
                                                     closeIcon={<Icon>close</Icon>}
-                                                    header={<CardTitle alt={`imagen-${servicio}`} image={(servicio === 'Agua')? imgAgua:imgEnergia} />}
+                                                    header={<CardTitle alt={`imagen-${servicio}`} image={(servicio === 'Agua') ? imgAgua : imgEnergia} />}
                                                     horizontal
                                                     revealIcon={<Icon>more_vert</Icon>}
                                                 >

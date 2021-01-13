@@ -3,28 +3,34 @@ import firstBackImage from '../../../assets/images/JP_0.webp';
 import styles from './Inicio.module.css';
 import { TopMenu } from '../menu/TopMenu';
 import { Link } from "react-router-dom";
-import { Row, Col, Container, Icon } from 'react-materialize';
+import { Row, Col, Container } from 'react-materialize';
 import { APP_NAME } from '../../../constants/Constants';
 import { FooterPublico } from '../../../components/common/footer/FooterPublico';
 
 export function Inicio() {
-    const { parallaxContainer, parallax } = styles;
+    const { parallaxContainer, parallax, textoBlanco, presentacion, tituloPresentacion } = styles;
     return (
         <div>
             <TopMenu />
             <div id="index-banner" className={"parallax-container " + parallaxContainer}>
                 <div className="section no-pad-bot">
                     <Container>
-                        <br></br><br></br>
-                        <h1 className="header center teal-text text-lighten-2">{APP_NAME}</h1>
-                        <Row className='center' >
-                            <h5 className="header col s12 light">Una forma moderna e interactiva de administrar tu consumo en servicios públicos del agua y energía.</h5>
-                        </Row>
-                        <Row className='center' >
-                            <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Inicia sesión</Link>
-                            <br></br>
-                            <br></br>
-                            <Link to='/registro' className="btn-large waves-effect waves-light teal lighten-1">Registrate</Link>
+                        <Row>
+                            <Col offset='m0' s={12} m={6}>
+                                <h1 className={`center teal-text ${tituloPresentacion}`}>Mide tu consumo</h1>
+                                <Row className='center' >
+                                    <h5 className={`header col s12 light ${textoBlanco}`}>Una forma moderna e interactiva de administrar tu consumo en servicios públicos del agua y energía.</h5>
+                                </Row>
+                            </Col>
+                            <Col s={0} m={12}></Col>
+                            <Col offset='m0' s={12} m={6}>
+                                <Row className='center' >
+                                    <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Ingresar</Link>
+                                    <br></br>
+                                    <br></br>
+                                    <Link to='/registro' className="btn-large waves-effect waves-light teal lighten-1">Soy nuevo</Link>
+                                </Row>
+                            </Col>
                         </Row>
                     </Container>
                 </div>
