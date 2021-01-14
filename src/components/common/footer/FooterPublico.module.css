@@ -9,5 +9,5 @@ a.socialLink {
 }
 
 footer.footerPrincipal {
-    background-color: #00aae4;
+    background-color: var(--primary-color);
 }

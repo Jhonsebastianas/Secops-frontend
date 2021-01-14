@@ -1,8 +1,8 @@
 .botonOutline{
     background-color: white !important;
-    border:  3px dotted #00aae4;
+    border:  3px dotted var(--primary-color);
     border-radius: 2px;
-    color:  #00aae4;
+    color:  var(--primary-color);
     font-weight: bold;
     height: 36px;
     line-height: 20px;
@@ -15,35 +15,15 @@
 
 /*Color primario*/
 .botonOutline:hover{
-    background-color: #00aae4 !important;
-    border:  2px solid #00aae4;
+    background-color: var(--primary-color) !important;
+    border:  2px solid var(--primary-color);
     color: white;
     cursor: pointer;
 }
 
 .botonOutline:focus{
-    background-color: #00aae4 !important;
-    border:  2px solid #00aae4;
-    color: white;
-    cursor: pointer;
-}
-
-/* Color secundario*/
-.colorSecundario{
-    border:  3px dotted #6c757d;
-    color:  #6c757d;
-}
-
-.colorSecundario:hover{
-    background-color: #6c757d !important;
-    border:  2px solid #6c757d;
-    color: white;
-    cursor: pointer;
-}
-
-.colorSecundario:focus{
-    background-color: #6c757d !important;
-    border:  2px solid #6c757d;
+    background-color: var(--primary-color) !important;
+    border:  2px solid var(--primary-color);
     color: white;
     cursor: pointer;
 }

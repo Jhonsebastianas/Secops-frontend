@@ -1,5 +1,9 @@
+.parallaxContainer {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
 .parallaxContainer .parallax img {
-    opacity: 0.8 !important;
+    opacity: 0.9 !important;
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -19,7 +23,7 @@
 
 .tituloPresentacion{
     font-family: Asap,sans-serif !important;
-    color: #00aae4 !important;
+    color: var(--primary-color) !important;
     font-weight: 700;
     /* text-shadow: 1px 1px 2px white; */
 }

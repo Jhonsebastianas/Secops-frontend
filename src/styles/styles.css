@@ -4,12 +4,12 @@
 }
 /* Botones */
 .teal.lighten-1 {
-    background-color: #00aae4 !important;
+    background-color: var(--primary-color) !important;
     border-radius: 50px;
 }
 
 button.btn {
-    background-color: #00aae4 !important;
+    background-color: var(--primary-color) !important;
     border-radius: 50px;
 }
 
