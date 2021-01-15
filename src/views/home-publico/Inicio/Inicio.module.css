@@ -27,3 +27,7 @@
     font-weight: 700;
     /* text-shadow: 1px 1px 2px white; */
 }
+
+.btnAzulClaro {
+    background-color: var(--primary-color-light) !important;
+}

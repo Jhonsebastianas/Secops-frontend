@@ -8,7 +8,7 @@ import { APP_NAME } from '../../../constants/Constants';
 import { FooterPublico } from '../../../components/common/footer/FooterPublico';
 
 export function Inicio() {
-    const { parallaxContainer, parallax, textoBlanco, presentacion, tituloPresentacion } = styles;
+    const { parallaxContainer, parallax, textoBlanco, tituloPresentacion, btnAzulClaro } = styles;
     return (
         <div>
             <TopMenu />
@@ -28,7 +28,7 @@ export function Inicio() {
                                     <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Ingresar</Link>
                                     <br></br>
                                     <br></br>
-                                    <Link to='/registro' className="btn-large waves-effect waves-light teal lighten-1">Soy nuevo</Link>
+                                    <Link to='/registro' className={`btn-large waves-effect waves-light teal lighten-1 ${btnAzulClaro}`}>Soy nuevo</Link>
                                 </Row>
                             </Col>
                         </Row>
