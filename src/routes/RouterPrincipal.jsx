@@ -5,7 +5,7 @@ import {
     Route, Redirect
 } from "react-router-dom";
 // Plugins a hacer routing
-import RegisterUser from '../plugin-registro-usuarios-frontend/views/registro-usuario/RegisterUser';
+import { RegistroUsuario } from '../plugin-registro-usuarios-frontend/views/registro-usuario/RegistroUsuario';
 import { RecuperarCuenta } from '../plugin-registro-usuarios-frontend/views/recuperar-cuenta/RecuperarCuenta';
 import { RestablecerClave } from '../plugin-registro-usuarios-frontend/views/recuperar-cuenta/restablecer-clave/RestablecerClave';
 import {Nosotros} from "../views/home-publico/nosotros/Nosotros";
@@ -36,7 +36,7 @@ export default function RouterPrincipal() {
                             <Inicio />
                         </Route>
                         <Route exact path="/registro">
-                            <RegisterUser />
+                            <RegistroUsuario />
                         </Route>
                         <Route exact path="/registro/recuperar-cuenta">
                             <RecuperarCuenta />

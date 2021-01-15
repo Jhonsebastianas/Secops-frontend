@@ -35,7 +35,7 @@ export function PasswordField(props) {
 
     return (
         <TextInput type={visiblePassword}
-            icon={<div style={showPasswordDiv} onClick={showPassword}><Icon className={showPasswordIcon}>visibility</Icon></div>}
+            icon={<div style={showPasswordDiv} onClick={showPassword}><Icon style={showPasswordIcon}>visibility</Icon></div>}
             {...props}
         />
     );
