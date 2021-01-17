@@ -8,19 +8,24 @@ import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
 // Hogares
 import imgAgua from '../../../assets/images/servicios/agua1.png';
 import imgEnergia from '../../../assets/images/servicios/energia1.png';
-import { Card, CardPanel, CardTitle, Col, Collapsible, CollapsibleItem, Collection, Icon, Row, Table } from 'react-materialize';
+import { Col, Row, Table, Modal, Button, TextInput, Card } from 'react-materialize';
 import { Services } from '../../../plugin-hogares-frontend/services/hogar.services';
 
 export function EditarCuenta() {
     const { imagen, nombre, logoServicio, fondoBlanco } = styles;
     // const [visibilidadFormulario, setVisibilidadformulario] = useState(false);
+    const [actualizarFormulario, setActualizarformulario] = useState(false);
+    const [listaHogares, setListaHogares] = useState([]);
+    const [editarHogar, setEditarHogar] = useState(null);
 
+    const actualizarInformacion = () => {
+        const formulario = (actualizarFormulario) ? false : true;
+        setActualizarformulario(formulario);
+    }
     // const esconderFormulario = () => {
     //     const formulario = (visibilidadFormulario) ? false : true;
     //     setVisibilidadformulario(formulario);
     // }
-    const [listaHogares, setListaHogares] = useState([]);
-    const [editarHogar, setEditarHogar] = useState(null);
 
     useEffect(() => {
         let mounted = true;
@@ -33,11 +38,11 @@ export function EditarCuenta() {
         return () => mounted = false;
     }, [])
 
-    function getHomeByNumeroContrato(numeroContrato){
+    function getHomeByNumeroContrato(numeroContrato) {
         Services.getHogarByNumeroContrato(numeroContrato, ({ data }) => {
             console.log(data);
             setEditarHogar(data);
-        }, (error) => { });    
+        }, (error) => { });
     }
 
     return (
@@ -98,7 +103,126 @@ export function EditarCuenta() {
 
                                                 </td>
                                                 <td>
-                                                    <i className="material-icons prefix" onClick={()=>getHomeByNumeroContrato(hogar.numeroContrato)}>mode_edit</i>
+                                                    {/*<i className="material-icons prefix" onClick={()=>getHomeByNumeroContrato(hogar.numeroContrato)}>mode_edit</i>*/}
+                                                    <Modal
+                                                        actions={[
+                                                            <Button flat modal="close" node="button" waves="green">Close</Button>
+                                                        ]}
+                                                        bottomSheet={false}
+                                                        fixedFooter
+                                                        header="Modal Header"
+                                                        id="Modal-0"
+                                                        open={false}
+                                                        options={{
+                                                            dismissible: true,
+                                                            endingTop: '10%',
+                                                            inDuration: 250,
+                                                            onCloseEnd: null,
+                                                            onCloseStart: null,
+                                                            onOpenEnd: actualizarInformacion,
+                                                            onOpenStart: () => getHomeByNumeroContrato(hogar.numeroContrato),
+                                                            opacity: 0.5,
+                                                            outDuration: 250,
+                                                            preventScrolling: true,
+                                                            startingTop: '4%'
+                                                        }}
+                                                        /*root={[object HTMLBodyElement]}*/
+                                                        trigger={<i className="material-icons prefix" node="button">mode_edit</i>}
+                                                    >
+                                                        <p>{/*(editarHogar) ? editarHogar.numeroContrato : ""*/}</p>
+                                                        <Row>
+                                                            <TextInput label={"Nombre hogar: " + ((editarHogar) ? editarHogar.nombre : "")} id='nombreHogar' m={6} s={12} />
+                                                            <TextInput label={"# Contrato: " + ((editarHogar) ? editarHogar.numeroContrato : "")} id='numeroContrato' m={6} s={12} autocomplete="off" />
+                                                            <Col m={12}>
+                                                                <p>Tipo de vivienda: *</p>
+                                                                <Col m={4} s={12}>
+                                                                    <Card>
+                                                                        <label>
+                                                                            <input name="tipoHogar" value='casa' type="radio"
+                                                                                onChange="" checked />
+                                                                            <span>Casa</span>
+                                                                        </label>
+                                                                    </Card>
+                                                                </Col>
+                                                                <Col m={4} s={12}>
+                                                                    <Card>
+                                                                        <label>
+                                                                            <input name="tipoHogar" value='apartamento' type="radio"
+                                                                                onChange="" />
+                                                                            <span>Apartamento</span>
+                                                                        </label>
+                                                                    </Card>
+                                                                </Col>
+                                                                <Col m={4} s={12}>
+                                                                    <Card>
+                                                                        <label>
+                                                                            <input name="tipoHogar" value='otro' type="radio"
+                                                                                onChange="" />
+                                                                            <span>Otro</span>
+                                                                        </label>
+                                                                    </Card>
+                                                                </Col>
+                                                                <Col m={6}>
+                                                                    <p>Estrato de la vivienda: *</p>
+                                                                    <Col m={4}>
+                                                                        <p>
+                                                                            <label>
+                                                                                <input className="with-gap" name='estrato' id='estrato1' value='1' type="radio"
+                                                                                   />
+                                                                                <span>1</span>
+                                                                            </label>
+                                                                        </p>
+                                                                    </Col>
+                                                                    <Col m={4}>
+                                                                        <p>
+                                                                            <label>
+                                                                                <input className="with-gap" name='estrato' id='estrato2' value='2' type="radio"
+                                                                                  />
+                                                                                <span>2</span>
+                                                                            </label>
+                                                                        </p>
+                                                                    </Col>
+                                                                    <Col m={4}>
+                                                                        <p>
+                                                                            <label>
+                                                                                <input className="with-gap" name='estrato' id='estrato3' value='3' type="radio"
+                                                                                     />
+                                                                                <span>3</span>
+                                                                            </label>
+                                                                        </p>
+                                                                    </Col>
+                                                                    <Col m={4}>
+                                                                        <p>
+                                                                            <label>
+                                                                                <input className="with-gap" name='estrato' id='estrato4' value='4' type="radio"
+                                                                                     />
+                                                                                <span>4</span>
+                                                                            </label>
+                                                                        </p>
+                                                                    </Col>
+                                                                    <Col m={4}>
+                                                                        <p>
+                                                                            <label>
+                                                                                <input className="with-gap" name='estrato' id='estrato5' value='5' type="radio"
+                                                                                    />
+                                                                                <span>5</span>
+                                                                            </label>
+                                                                        </p>
+                                                                    </Col>
+                                                                    <Col m={4}>
+                                                                        <p>
+                                                                            <label>
+                                                                                <input className="with-gap" name='estrato' id='estrato6' value='6' type="radio"
+                                                                                     />
+                                                                                <span>6</span>
+                                                                            </label>
+                                                                        </p>
+                                                                    </Col>
+                                                                   
+                                                                </Col>
+                                                            </Col>
+                                                        </Row>
+                                                    </Modal>
                                                 </td>
                                             </tr>
                                         );
@@ -106,10 +230,10 @@ export function EditarCuenta() {
                                 </tbody>
                             </Table>
                         </Col>
-                    </Col>
+                        </Col>
 
                 </form>
-                {/* <FooterPublico /> */}
+                    {/* <FooterPublico /> */}
             </Row>
         </div>
     );

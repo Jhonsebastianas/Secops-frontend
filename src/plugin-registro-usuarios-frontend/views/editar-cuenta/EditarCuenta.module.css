@@ -22,6 +22,11 @@
     width: 25px;
     margin-left: 6%;
 }
+/*Propio de materialize*/
+#numeroContrato label{
+    font-size: 1.3rem !important;
+    color: black;
+}
 
 
 @media only screen and  (min-width:300px) and (max-width:411px){
