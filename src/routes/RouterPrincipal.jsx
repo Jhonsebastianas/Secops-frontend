@@ -18,8 +18,10 @@ import {EditarCuenta} from '../plugin-registro-usuarios-frontend/views/editar-cu
 // Rutas privadas
 import { Home } from '../views/home-privado/Home';
 import { RegisterHome } from '../plugin-registro-usuarios-frontend/views/registro-hogar/RegisterHome';
+import { Notificaciones } from '../plugin-notificaciones-frontend/views/notificaciones/Notificaciones';
 
-import {GestionarConsumo} from '../plugin-registro-usuarios-frontend/views/gestionar-consumo/GestionarConsumo'
+import {GestionarConsumo} from '../plugin-registro-usuarios-frontend/views/gestionar-consumo/GestionarConsumo';
+import { TopMenu } from '../views/home-privado/menu/TopMenu';
 
 // Toast
 import { ToastProvider } from 'react-toast-notifications';
@@ -68,6 +70,10 @@ export default function RouterPrincipal() {
                         </PrivateRoute>
                         <PrivateRoute path='/editar-cuenta'>
                             <EditarCuenta/>
+                        </PrivateRoute>
+                        <PrivateRoute path='/notificaciones'>
+                            <TopMenu />
+                            <Notificaciones/>
                         </PrivateRoute>
                     </Switch>
                 </ToastProvider>
