@@ -18,7 +18,7 @@ export function Inicio() {
                         <Row>
                             <Col offset='m0' s={12} m={7}>
                                 <h1 className={`center teal-text ${tituloPresentacion}`}>Mide tu consumo</h1>
-                                <Row className='center' >
+                                 <Row className='center' >
                                     <h5 className={`header col s12 light ${textoBlanco}`}>Una forma moderna e interactiva de administrar tu consumo en servicios públicos del agua y energía.</h5>
                                 </Row>
                             </Col>
@@ -43,7 +43,7 @@ export function Inicio() {
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
                                 <h5 className="center">Controla tus servicios públicos (agua y energía)</h5>
-
+                              
                                 <p className="light">Ten a la mano tu consumo de servicios públicos en tu(s) Hogar(es) siempre que lo necesites, y conoce tu forma de gasto de manera automática o manual, adaptado a tus preferencias.</p>
                             </div>
                         </Col>
@@ -52,7 +52,7 @@ export function Inicio() {
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">group</i></h2>
                                 <h5 className="center">Pensado para reducir tu consumo</h5>
-
+                             
                                 <p className="light">{APP_NAME}, te alerta cuando estás teniendo un desfase en comparación de tu consumo regular, permitiendo detectar aumentos en el consumo de servicios públicos como posibles fugas.</p>
                             </div>
                         </Col>

@@ -53,6 +53,10 @@ export function TopMenu() {
             <NavItem href="/editar-cuenta" style={colorNegro}>
                 Perfil
         </NavItem>
+            <NavItem href="/notificaciones" style={colorNegro}>
+                Notificaciones
+        </NavItem>
+
             <NavItem onClick={singOff} style={colorNegro}>
                 Cerrar sesión
         </NavItem>

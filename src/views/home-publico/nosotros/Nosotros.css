@@ -1,0 +1,64 @@
+
+.colorH4{
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin: 80px auto 40px auto;  
+}
+
+.tituloH4{
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin: 20px auto;
+}
+.centrar{
+    text-align: center;
+} 
+
+.quienesSomos{
+    text-align: right;
+    margin-right: 5%;
+}
+
+.quienesSomos  p{
+    margin: inherit!important;
+    width: 70%;
+    text-align: justify;
+}
+
+.imagenSvg{
+    bottom: 100px !important;
+    background: url('../../../assets/images/fondo.svg') no-repeat bottom;
+}
+
+.posicionImagen{
+    margin-top: 80px;
+}
+
+.botonEmpezar{
+    border: 1px solid #00b8ff;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    background:#008fe2;
+    padding: 8px;
+    width: auto;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.botonEmpezar:hover{
+    background: #0088b6;
+    border: 1px solid #00bfff;
+}
+.botonEmpezar:focus{
+    background: #0088b6;
+}
+
+@media(max-width:992px){
+
+    .colorH4{
+        margin: 20px auto 20px auto;
+    }
+  
+    
+}
