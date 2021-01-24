@@ -124,7 +124,7 @@ export const RegisterUserForm = () => {
                     clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
                     render={renderProps => (
                         <button className={boton} onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                            <img className={imagenGoogle} src={GoogleImage}></img>
+                            <img className={imagenGoogle} src={GoogleImage} alt="iconoGoogle"></img>
                         Registrate con Google</button>
                     )}
                     onSuccess={respuestaGoogle}

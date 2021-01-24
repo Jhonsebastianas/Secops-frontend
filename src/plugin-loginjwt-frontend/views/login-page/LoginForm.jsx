@@ -108,7 +108,7 @@ export function LoginForm() {
                     clientId="31983275788-597slnqbnq71p45qajk27m718vqj13pq.apps.googleusercontent.com"
                     render={renderProps => (
                         <button className={boton}  onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                        <img className={imagenGoogle} src={Google}></img>
+                        <img className={imagenGoogle} src={Google} alt="iconoGoogle"></img>
                         Inicia Sesión con Google</button>
                       )}
                     onSuccess={respuestaGoogle}

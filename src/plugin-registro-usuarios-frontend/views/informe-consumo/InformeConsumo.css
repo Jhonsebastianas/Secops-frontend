@@ -1,0 +1,97 @@
+.contenedorPrincipal{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    width: 95%;
+    margin: 20px auto 20px auto!important;  
+}
+
+.contenedorMediano{
+    width: 100%;
+    /*border-radius: 20px;
+    background: #ffffff;
+    box-shadow:  5px 5px 25px #e8e8e8, 
+                -5px -5px 25px #ffffff;*/
+    padding: 20px 20px 20px 40px!important;
+    margin-bottom: 30px !important; 
+    text-align: center;
+}
+
+.informacion{
+    text-align: left;
+    padding-left: inherit;
+}
+.informacion p{
+    display: inline-block;
+    width: 50%;
+}
+
+.contenedorMaximum{
+    width: 100%;
+    /*border-radius: 20px;
+    background: #ffffff;
+    box-shadow:  5px 5px 25px #e8e8e8, 
+                -5px -5px 25px #ffffff;*/
+    padding: 10px 10px 20px 10px !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+}
+
+.contenedorMediano h5{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    text-align: center;
+}
+
+.contenedorMaximum h5{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.imagenServicio{
+    width: 30%;
+    margin-top: auto;
+}
+
+.colorIcon{
+    color: rgb(52, 122, 52);
+}
+
+.botonAgregar{
+    background: #0088b6;
+
+}
+
+.botonAgregar:hover{
+    background: #4682b4;
+    transform: rotate(60deg);
+  
+}
+.botonAgregar:focus{
+    background: #4682b4;
+}
+
+.botonFlotante{
+   display: none;
+}
+
+@media(max-width:500px){
+
+    .anchoGrafica{
+        width: 110%;
+        text-align: center;
+    }
+}
+
+@media(max-width:992px){
+    .contenedorMaximum{
+        display: none;
+    }
+    .dimensionContenedor{
+        width: 100% !important;
+    }
+    .anchoGrafica{
+        width: 95%;
+        text-align: center;
+    }
+    .botonFlotante{
+        display: block;
+    }
+
+}
