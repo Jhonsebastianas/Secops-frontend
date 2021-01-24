@@ -4,7 +4,7 @@ import { NavItem, Container, Row, Col } from 'react-materialize';
 import LoginUtils from '../../../plugin-loginjwt-frontend/utils/login.utils';
 import { useToasts } from 'react-toast-notifications';
 
-export function MenuLateral () {
+export function MenuLateral() {
 
     const { addToast } = useToasts();
     const history = useHistory();
@@ -25,6 +25,12 @@ export function MenuLateral () {
                 <Col s={12} m={12}>
                     <NavItem href="/editar-cuenta">
                         Perfil
+                    </NavItem>
+
+                </Col>
+                <Col s={12} m={12}>
+                    <NavItem href="/notificaciones">
+                        Notificaciones
                     </NavItem>
                 </Col>
                 <Col s={12} m={12}>

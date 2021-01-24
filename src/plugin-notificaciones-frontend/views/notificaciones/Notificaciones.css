@@ -1,0 +1,8 @@
+.card-notificaciones {
+    background-color: var(--primary-color);
+}
+
+.card-notificaciones .titulo-notificacion {
+    color: white;
+    font-weight: 750;
+}
