@@ -2,74 +2,55 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Navbar, NavItem, Icon, Row } from 'react-materialize';
 import { APP_NAME } from '../../../constants/Constants';
-import styles from '../menu/TopMenu.module.css';
-
+import "../menu/TopMenu.css";
 const style = {
     menuColor: {
         backgroundColor: 'white',
     },
     colorNegro: {
         color: 'black'
+    },
+    link: {
+
     }
 }
 
 export function TopMenu() {
     const { menuColor, colorNegro } = style;
-    const {navigation, hamBtn, links, link, span1, span2, span3, active} = styles;
     const [actualizarMenuCelular, setMenuCelular] = useState(false);
 
     const menuCelular = () => {
         const formulario = (actualizarMenuCelular) ? false : true;
         setMenuCelular(formulario);
     }
+
     return (
         <Row>
-            <Navbar style={menuColor}
-                alignLinks="right"
-                brand={<Link to='/' className="brand-logo">{APP_NAME}</Link>}
-                centerChildren
-                id="mobile-nav"
-                menuIcon={<Icon style={colorNegro}>menu</Icon>}
-                options={{
-                    draggable: true,
-                    edge: 'left',
-                    inDuration: 250,
-                    onCloseEnd: null,
-                    onCloseStart: null,
-                    onOpenEnd: null,
-                    onOpenStart: null,
-                    outDuration: 200,
-                    preventScrolling: true
-                }}
-            >
-                <NavItem href="/" style={colorNegro}>
-                    Inicio
-            </NavItem>
-                <NavItem href="/nosotros" style={colorNegro}>
-                    Nosotros
-            </NavItem>
-                <NavItem href="/contactanos" style={colorNegro}>
-                    Contáctanos
-            </NavItem>
-            </Navbar>
-            <div className={(actualizarMenuCelular) ? navigation + " " + active : navigation}>
-                <div className={hamBtn} onClick={menuCelular}>
-                    <span className={span1}></span>
-                    <span className={span2}></span>
-                    <span className={span3}></span>
+            <nav className="banner-superior">
+                <div>
+                    <ul className="banner-lista">
+                        <li><a>{APP_NAME}</a></li>
+                        <li><a>Inicio</a></li>
+                        <li><a>Nosotros</a></li>
+                        <li><a>Contáctanos</a></li>
+                    </ul>
                 </div>
-                <div className={links}>
-                    <div >
-                        <a className={link} href="#">Home</a>
+            </nav>
+            <div class={(actualizarMenuCelular) ? "navigation active" : "navigation"}  onClick={menuCelular}>
+                <div class={"ham-btn"}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="links">
+                    <div class="link">
+                        <a href="#">Inicio</a>
                     </div>
-                    <div >
-                        <a className={link} href="#">Dashb</a>
+                    <div class="link">
+                        <a href="#">Nosotros</a>
                     </div>
-                    <div >
-                        <a className={link} href="#">About</a>
-                    </div>
-                    <div >
-                        <a className={link} href="#">Contac</a>
+                    <div class="link">
+                        <a href="#">Contáctanos</a>
                     </div>
                 </div>
             </div>

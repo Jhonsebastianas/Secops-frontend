@@ -8,7 +8,7 @@ import { APP_NAME } from '../../../constants/Constants';
 import { FooterPublico } from '../../../components/common/footer/FooterPublico';
 
 export function Inicio() {
-    const { parallaxContainer, parallax, textoBlanco, tituloPresentacion, btnAzulClaro } = styles;
+    const { parallaxContainer, parallax, textoBlanco, tituloPresentacion, btnAzulClaro, btnIngresar } = styles;
     return (
         <div>
             <TopMenu />
@@ -16,19 +16,17 @@ export function Inicio() {
                 <div className="section no-pad-bot">
                     <Container>
                         <Row>
-                            <Col offset='m0' s={12} m={6}>
+                            <Col offset='m0' s={12} m={7}>
                                 <h1 className={`center teal-text ${tituloPresentacion}`}>Mide tu consumo</h1>
                                 <Row className='center' >
                                     <h5 className={`header col s12 light ${textoBlanco}`}>Una forma moderna e interactiva de administrar tu consumo en servicios públicos del agua y energía.</h5>
                                 </Row>
                             </Col>
                             <Col s={0} m={12}></Col>
-                            <Col offset='m0' s={12} m={6}>
+                            <Col offset='m0' s={12} m={7}>
                                 <Row className='center' >
-                                    <Link to='/login' className="btn-large waves-effect waves-light teal lighten-1">Ingresar</Link>
-                                    <br></br>
-                                    <br></br>
-                                    <Link to='/registro' className={`btn-large waves-effect waves-light teal lighten-1 ${btnAzulClaro}`}>Soy nuevo</Link>
+                                    <Link to='/login' className= {`btn-large waves-effect waves-light teal lighten-1 ${btnIngresar}`}>Ingresar</Link>
+                                    <Link to='/registro' className={`${btnAzulClaro} btn-large waves-effect waves-light`}>Soy nuevo</Link>
                                 </Row>
                             </Col>
                         </Row>
@@ -41,7 +39,7 @@ export function Inicio() {
             <Container>
                 <div className="section">
                     <Row>
-                        <Col s={12} m={6}>
+                        <Col s={12} m={5}>
                             <div className="icon-block">
                                 <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
                                 <h5 className="center">Controla tus servicios públicos (agua y energía)</h5>

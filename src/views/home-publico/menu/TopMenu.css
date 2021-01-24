@@ -1,6 +1,10 @@
 
+  nav{
+      background-color: white;
+  }
+
   .navigation{
-    position: absolute;
+    position:fixed;
     top:-16px;
     width:100%;
     height:103%;
@@ -10,16 +14,18 @@
     transition:all 300ms ease-in-out;
   }
   
-  .active{
+  .navigation.active{
     clip-path:circle(75%);
     left: 0px !important;
     background:var(--primary-color);
     position: fixed;
+    color: white;
+    height: 105%;
   }
   
-  .hamBtn{
+  .navigation .ham-btn{
     position:absolute;
-    top:20px;
+    top:19px;
     left:20px;
     width:50px;
     height:50px;
@@ -27,94 +33,103 @@
     cursor:pointer;
   }
   
-  .navigation .hamBtn span{
+  .navigation .ham-btn span{
     position:absolute;
     right:0%;
     transform:translate(-50%,-50%);
     width:50%;
     height:2px;
-    background:black;
+    background: #111111;;
     transition:all 200ms ease-in-out;
   }
   
-  .span1{
+  .navigation .ham-btn span:nth-child(1){
     top:30%;
   }
   
-  .span2{
+  .navigation .ham-btn span:nth-child(2){
     top:50%;
   }
   
-  .span3{
+  .navigation .ham-btn span:nth-child(3){
     top:70%;
   }
   
-  .navigation.active .span1{
+  .navigation.active .ham-btn span:nth-child(1){
     top:50%;
     transform:translate(-50%,-50%) rotate(45deg);
+    background: white;
   }
   
-  .navigation.active .span2{
+  .navigation.active .ham-btn span:nth-child(2){
     display:none;
+    background: white;
   }
   
-.navigation.active .span3{
+  .navigation.active .ham-btn span:nth-child(3){
     top:50%;
     transform:translate(-50%,-50%) rotate(-45deg);
+    background: white;
   }
   
-  .links{
+  .navigation .links{
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
   }
   
-  .links a{
+  .navigation .links a{
     position:relative;
     display:inline-block;
     margin:20px 0px;
     font-size:20px;
     font-weight:600;
     text-decoration:none;
-    color:#f5f5f5;
+    color:white;
     text-transform:uppercase;
     letter-spacing:5px;
   }
   
- .link:after{
+  .navigation .links a:after{
     content:"";
     position:absolute;
     left:0px;
     bottom:0px;
     height:2px;
     width:0%;
-    background:tomato;
+    background: white;;
     transition:all 300ms ease-in-out;
   }
   
-  .link:hover{
-    width:100% !important;
-  }
-  
-  @media only screen and (max-width:992px){
-    .navigation{
-      /*visibility: ;*/
-      display: inline;
-    }
+  .navigation .links a:hover:after{
+    width:100%;
   }
 
   @media only screen and  (min-width:601px) and (max-width:992px){
       .navigation{
         left: 44px;
       }
+
+      .nombreProyecto{
+        position: absolute;
+        left: 12%;
+      }
   }
 
-  @media only screen and  (min-width:992px){
-    .navigation{
-      /*visibility: hidden;*/
-      display: none;
-      
-    }
-  }   
+  .banner-lista{
+     display: flex;
+     justify-content: flex-end;
+     background-color: white;
+  }
+
+  .banner-lista li a{
+    color: black;
+  }
+
+  @media only screen and  (min-width:0px) and (max-width:499px){
+      .banner-lista li a{
+        display: none;
+      }
+  }

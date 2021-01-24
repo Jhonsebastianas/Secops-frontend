@@ -1,5 +1,6 @@
 .parallaxContainer {
     background-color: rgba(0, 0, 0, 0.45) !important;
+    margin-top: -20px;
 }
 
 .parallaxContainer .parallax img {
@@ -30,4 +31,11 @@
 
 .btnAzulClaro {
     background-color: var(--primary-color-light) !important;
+    border-radius: 50px;
+    margin-left: 2%;;
+    margin-top: 2%;;
+}
+
+.btnIngresar{
+    width: 143px;
 }
